@@ -1,12 +1,12 @@
 {
   "publicVersion": "1.0",
-  "build": "4.4.3",
+  "presetVersion": "1.0.0",
   "format": "Lumiverse",
-  "filename": "BLACKBOX-V1-build-4.4.3.json",
-  "bytes": 1095744,
-  "sha256": "1950ebc7049631318f6b70a01779d89ac4599e562bfa5150a34aa47072e8d28f",
+  "filename": "BLACKBOX-V1.json",
+  "bytes": 1168416,
+  "sha256": "50433350446d686348baff75085ecaa4cbc494d4f653c455c545a92bd3c23bdb",
   "moduleCount": 24,
-  "sourceName": "BLACKBOX // EiDOS : METALHEART · V4.4.3",
+  "sourceName": "BLACKBOX // EiDOS : METALHEART · V1",
   "categories": [
     {
       "id": "guide-category-1",

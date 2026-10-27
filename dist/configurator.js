@@ -15,7 +15,7 @@ async function loadSource(){
   if(source)return source;
   const r=await fetch('release.json');if(!r.ok)throw new Error('Release information is unavailable.');
   const release=await r.json();
-  if(release.build!=='4.4.3'||release.filename!=='BLACKBOX-V1-build-4.4.3.json')throw new Error('This release needs an updated configurator. Please use the original download.');
+  if(release.presetVersion!=='1.0.0'||release.filename!=='BLACKBOX-V1.json')throw new Error('This release needs an updated configurator. Please use the original download.');
   const response=await fetch(`downloads/${release.filename}`);if(!response.ok)throw new Error('The original preset could not be loaded.');
   const bytes=await response.arrayBuffer();
   const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -67,7 +67,7 @@ function render(focus=false){
   $('#download-receipt')?.addEventListener('click',()=>{
     const result=configurePreset(source,answers);
     const lines=answerSummary(answers).map(f=>`${f.label}: ${f.effective}${f.effective!==f.requested?` (your answer: ${f.requested})`:''}`);
-    download(['BLACKBOX Public V1 / custom settings / internal build 4.4.3','',...lines,'','Mode notes',...result.notes.map(n=>'- '+n),'','Changed saved controls',...result.changes.filter(c=>c.changed).map(c=>`${c.label}: ${c.before} → ${c.after}`)].join('\n'),'BLACKBOX-V1-custom-settings.txt','text/plain');
+    download(['BLACKBOX V1 / custom settings / version 1.0.0','',...lines,'','Mode notes',...result.notes.map(n=>'- '+n),'','Changed saved controls',...result.changes.filter(c=>c.changed).map(c=>`${c.label}: ${c.before} → ${c.after}`)].join('\n'),'BLACKBOX-V1-custom-settings.txt','text/plain');
     status.textContent='Settings receipt prepared for download.';
   });
   $('#retry-config')?.addEventListener('click',prepareReview);

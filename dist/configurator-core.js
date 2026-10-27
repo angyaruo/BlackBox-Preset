@@ -128,6 +128,6 @@ export function configurePreset(source,answers){
   }
   if(!light||light!==dark)throw new Error('The release does not have matching light and dark display rules.');
   changes.push({label:'Display overlays',before:source.extensions.regex_scripts.some(r=>r.name.includes('[LIGHT]')&&!r.disabled)?'Light / mixed':'Dark',after:a.skin==='light'?'Light':'Dark',changed:source.extensions.regex_scripts.some((r,i)=>r.disabled!==p.extensions.regex_scripts[i].disabled),kind:'skin'});
-  p.name=`BLACKBOX // EiDOS : Public V1 · Custom ${matrix?'Matrix':'RP'} · build 4.4.3`;
+  p.name=`BLACKBOX // EiDOS : METALHEART · V1 · Custom ${matrix?'Matrix':'RP'}`;
   return {preset:p,changes,notes:activeNotes(a),filename:`BLACKBOX-V1-custom-${matrix?'matrix':'roleplay'}-${a.skin}.json`};
 }
