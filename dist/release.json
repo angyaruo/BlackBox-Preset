@@ -7,6 +7,831 @@
   "sha256": "1950ebc7049631318f6b70a01779d89ac4599e562bfa5150a34aa47072e8d28f",
   "moduleCount": 24,
   "sourceName": "BLACKBOX // EiDOS : METALHEART · V4.4.3",
+  "categories": [
+    {
+      "id": "guide-category-1",
+      "title": "Start here",
+      "tagline": "Read the map, then use the controls.",
+      "description": "The Read Me explains the preset inside Lumiverse. It stays disabled because it is documentation, not part of the model’s request. The final Blank Prompt is an extra framing note, not a feature switch.",
+      "tip": "Read the documentation; leave structural blocks as supplied.",
+      "blocks": [
+        {
+          "id": "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+          "name": "READ ME // BLACKBOX INTERFACE GUIDE ‼️",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "01a16010-45d1-7000-b40b-0e813c03be99",
+          "name": "Blank Prompt",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-2",
+      "title": "The storytelling foundation",
+      "tagline": "What BlackBox asks the model to care about.",
+      "description": "These instructions connect motives, observable actions, consequences, and continuity. They ask characters to behave like people and discourage repeating a point just to prove a personality trait.",
+      "tip": "Usually leave these enabled. They establish the shared writing contract.",
+      "blocks": [
+        {
+          "id": "c2b3a4d5-e6f7-8a9b-0c1d-2e3f4a5b6c7d",
+          "name": "Core Nervous-System Directives",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "d3c4b5a6-f7e8-9a0b-1c2d-3e4f5a6b7c8d",
+          "name": "GLOBAL PROTOCOLS: EiDOS",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "e4d5c6b7-a8f9-0b1c-2d3e-4f5a6b7c8d9e",
+          "name": "Somatic Method",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "a6b7c8d9-e0f1-2a3b-4c5d-6e7f8a9b0c1d",
+          "name": "Entity Integrity",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc555-3db9-7000-81c5-6fe785d46d10",
+          "name": "Sequence Momentum",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "fc8b0393-5e93-481c-9519-8ea5a4f47545",
+          "name": "Signal Economy",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "0edc819d-4048-48d5-a8d9-db6897e78a7d",
+          "name": "Tension Lattice",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-3",
+      "title": "Who plays, who knows, who resolves",
+      "tagline": "The rules of participation.",
+      "description": "Session Architecture chooses roleplay or full-cast Matrix authorship. Polyphony coordinates real group chats. Black Veil limits what the reader can learn. Field Rules adds explicit stakes or external d6 checks, while Cut & Carry recognizes your transition commands.",
+      "tip": "Use their Custom Variables. Matrix overrides group and RPG routing; protected discovery suppresses backstage information.",
+      "blocks": [
+        {
+          "id": "b3525000-0000-4000-8000-000000000001",
+          "name": "Session Architecture",
+          "enabled": true,
+          "controls": [
+            "Session Mode",
+            "Matrix Chapter Words"
+          ]
+        },
+        {
+          "id": "b4000000-0000-4000-8000-000000000001",
+          "name": "Polyphony",
+          "enabled": true,
+          "controls": [
+            "Group turn ownership"
+          ]
+        },
+        {
+          "id": "b4000000-0000-4000-8000-000000000002",
+          "name": "Black Veil",
+          "enabled": true,
+          "controls": [
+            "Reader access",
+            "Permitted glimpse / reveal scope"
+          ]
+        },
+        {
+          "id": "b4000000-0000-4000-8000-000000000003",
+          "name": "Field Rules: RPG Lite",
+          "enabled": true,
+          "controls": [
+            "Resolution mode"
+          ]
+        },
+        {
+          "id": "b4000000-0000-4000-8000-000000000004",
+          "name": "Cut & Carry",
+          "enabled": true,
+          "controls": [
+            "Recognize transition commands"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guide-category-4",
+      "title": "The world and its source material",
+      "tagline": "Where the model gets the facts.",
+      "description": "These blocks bring in the scenario, character card, persona, lorebook, and conversation history. Canon Matrix organizes continuity. Extra character/persona slots can duplicate material already loaded elsewhere.",
+      "tip": "Keep source and section-wrapper blocks intact. Enable duplicate source slots only if your setup needs them.",
+      "blocks": [
+        {
+          "id": "019fc92f-41b8-7000-9e42-88818f67f16b",
+          "name": "HOST ENVIRONMENT",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc92f-efac-7000-b030-51e38e377532",
+          "name": "The Environment",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc92f-ea2c-7000-8b50-6da8152c0278",
+          "name": "Operator Profile (User)",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc92f-c673-7000-9175-01cff5313556",
+          "name": "Entity Dossier (Char)",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b7c8d9e0-f1a2-3b4c-5d6e-7f8a9b0c1d2e",
+          "name": "Perception Modes",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc559-2757-7000-a50c-a4cb18591bbd",
+          "name": "CANON MATRIX",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc564-5096-7000-afc0-5af7ce983a51",
+          "name": "Post-History",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "019fc55d-3734-7000-afb5-3b00c793bfdc",
+          "name": "Character Description",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "019fc55e-ac9a-7000-b1cb-0bbe7a2f229d",
+          "name": "User Persona",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "019fc55f-688b-7000-9357-268c28cbc145",
+          "name": "World Info (Before)",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc562-d3f6-7000-aecf-ead9c1c5967e",
+          "name": "World Info (After)",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b3c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d85",
+          "name": "Chat History",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-5",
+      "title": "The narrative lens",
+      "tagline": "What the narration pays attention to.",
+      "description": "Perception Aperture changes emphasis: neutral observation, relationships, complications, or other selected genres. Anomaly Aperture controls how far unusual developments may depart from the established setting. Neither replaces world facts or the character card.",
+      "tip": "Choose a lens that suits the story. A romantic lens does not guarantee attraction; an adversity lens should not erase earned success.",
+      "blocks": [
+        {
+          "id": "01a05e06-3247-7000-b510-ce81c46d5400",
+          "name": "Perception Aperture (Genre)",
+          "enabled": true,
+          "controls": [
+            "Perception Aperture"
+          ]
+        },
+        {
+          "id": "d9b636dd-d8bc-41bd-b129-c39e58e65fb8",
+          "name": "Anomaly Aperture (Optional)",
+          "enabled": true,
+          "controls": [
+            "New Anomaly Ceiling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guide-category-6",
+      "title": "Mature-content controls",
+      "tagline": "A separate set of content preferences.",
+      "description": "Black-Channel Access is the main mature-content switch. Exposure Threshold and the blocks beneath it supply more specific instructions for that mode. Their presence in the file does not mean every instruction is active.",
+      "tip": "Use the master variable, rather than removing section wrappers. These are model instructions, not an enforced content filter.",
+      "blocks": [
+        {
+          "id": "019fc5b9-647a-7000-9930-a8f1d2c30477",
+          "name": "BLACK CHANNEL",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a05e17-3e5c-7000-b8ba-52dc8810db5e",
+          "name": "Black-Channel Access",
+          "enabled": true,
+          "controls": [
+            "Black Channel"
+          ]
+        },
+        {
+          "id": "be98e260-5394-42ae-b922-26b1f68df99e",
+          "name": "Fiction Authority Layer",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a079ef-bef4-7000-a16e-1a489a1db9d0",
+          "name": "Exposure Threshold",
+          "enabled": true,
+          "controls": [
+            "Exposure Threshold"
+          ]
+        },
+        {
+          "id": "01a05a30-1ab7-7000-bac3-729283eba92c",
+          "name": "Closed-System Jurisdiction",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a05a3c-e53b-7000-8979-d01b9a8cc0f9",
+          "name": "Character-True Intimacy",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc5bf-c538-7000-954b-c0412ad76afb",
+          "name": "Somatic SFX",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc5bf-c9e9-7000-9759-54ede8321925",
+          "name": "Uncensored Subvocal Feed",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc5bf-ce32-7000-a509-0930fc92d31b",
+          "name": "Explicit Anatomy",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fca1c-36a6-7000-98ef-206ccd0fa1fe",
+          "name": "Taboo Access",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fca2b-9c72-7000-8666-243c9d99063f",
+          "name": "Somatic Acceleration",
+          "enabled": false,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-7",
+      "title": "The prose desk",
+      "tagline": "Length, perspective, voice, and editing.",
+      "description": "Narrative Mass sets a word aim or freer pacing. Vocal Signal Balance favors speech or narration; Subject Resistance adjusts willingness. Sensor Perspective controls the camera, while Style Kernel controls diction. Anti-Slop and No-Clone ask for purposeful prose and one final scene rather than repeated drafts.",
+      "tip": "Change Custom Variables first. Word aims are approximate and separate from your provider’s output-token limit.",
+      "blocks": [
+        {
+          "id": "019fc56c-a686-7000-9c88-22dc70a3a713",
+          "name": "RESPONSE CALIBRATION",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a05b50-be03-7000-bccb-fc235ee3ee49",
+          "name": "Narrative Mass",
+          "enabled": true,
+          "controls": [
+            "Narrative Mass",
+            "Free-Flow Narrative Mass",
+            "Pulse Mode — Responsive Turn Size"
+          ]
+        },
+        {
+          "id": "01a05b69-0ce7-7000-a8eb-aea381f64186",
+          "name": "Vocal Signal Balance",
+          "enabled": true,
+          "controls": [
+            "Vocal Signal"
+          ]
+        },
+        {
+          "id": "019fc56f-8fc0-7000-a439-f7069008700b",
+          "name": "Subject Resistance",
+          "enabled": true,
+          "controls": [
+            "Subject Resistance"
+          ]
+        },
+        {
+          "id": "019fc56a-e6b5-7000-8f10-ba2715c8abe0",
+          "name": "Sensor Perspective",
+          "enabled": true,
+          "controls": [
+            "Sensor Perspective"
+          ]
+        },
+        {
+          "id": "019fc56e-3f8e-7000-a601-2be7c6f8b9ec",
+          "name": "LANGUAGE PROTOCOL",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc56e-49be-7000-8ec8-c2342745aae3",
+          "name": "VOCAL SIGNAL PROTOCOL",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fd02a-7c1d-7000-97c1-6cec4b562b5c",
+          "name": "SURFACE SYNTAX",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a00889-10eb-7000-b99c-dfb8c02210bc",
+          "name": "Style Kernel",
+          "enabled": true,
+          "controls": [
+            "Prose Voice"
+          ]
+        },
+        {
+          "id": "019fd02f-cee0-7000-9530-6d1d88c770bf",
+          "name": "EiDOS's Anti-Slop Filters",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fd822-e37d-7000-9a0a-72991a29899c",
+          "name": "No-Clone Protocol",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-8",
+      "title": "People with lives of their own",
+      "tagline": "Personality survives the scene.",
+      "description": "Human Noise, Organic Flow, and Human Error add character-specific range. Epistemic Resistance ties beliefs to available evidence; Affective Integrity preserves motives through closeness. Black Hat supports established antagonists. The embodiment modules keep identity and nonhuman or synthetic bodies consistent.",
+      "tip": "Choose optional modifiers to suit the cast. Character consistency should not mean permanent hostility or random incompetence.",
+      "blocks": [
+        {
+          "id": "c4d5e6f7-a8b9-0c1d-2e3f-4a5b6c7d8e9f",
+          "name": "Entity Modifiers",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "d5e6f7a8-b90c-1d2e-3f4a-5b6c7d8e9f0a",
+          "name": "Human Noise",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "e6f7a8b9-0c1d-2e3f-4a5b-6c7d8e9f0a1b",
+          "name": "Organic Flow",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "f7a8b90c-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+          "name": "Subvocal Access",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "3a30e573-0fa4-4a56-b1fe-a96408ef7fae",
+          "name": "Epistemic Resistance",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "d7558738-4136-4d08-b15c-714c8016ce47",
+          "name": "Affective Integrity",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc574-310f-7000-a900-852acb9d1313",
+          "name": "Human Error",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "97439396-dacd-46ef-a255-c5f0e3d8b92a",
+          "name": "Black Hat : Antagonist Integrity",
+          "enabled": false,
+          "controls": [
+            "Antagonist targets",
+            "Operating method",
+            "Reach ceiling",
+            "Restraints and vulnerabilities"
+          ]
+        },
+        {
+          "id": "39bf2b6f-157b-44be-a092-40deed8dedfa",
+          "name": "Prior Existence Protocol",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "cb50d396-079b-4c27-946b-306c0ff99379",
+          "name": "Xenobiotic Somatics",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "ee1cb8da-1daa-4eda-87c7-c5de57b56f91",
+          "name": "Synthetic Somatics",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "118d0cd0-88cc-4d55-9c7b-87c326f0484e",
+          "name": "Divergent Embodiment",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-9",
+      "title": "Your place in the story",
+      "tagline": "Identity and ownership of actions.",
+      "description": "Identity Anchor supplies an optional persona pronoun/gender override. Reality Anchor discourages instant worship. Operator Privilege, Action Resolution, and Affective Bias guide how the world responds to the operator without transferring authorship of their roleplay character.",
+      "tip": "Use persona defaults unless you want an explicit override. Field Rules takes priority over Operator Privilege.",
+      "blocks": [
+        {
+          "id": "019fcf88-03a0-7000-8fdf-98f64328d471",
+          "name": "OPERATOR MODIFIERS",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b3529000-0000-4000-8000-000000000001",
+          "name": "Identity Anchor // Pronouns & Gender",
+          "enabled": true,
+          "controls": [
+            "Operator Identity Anchor"
+          ]
+        },
+        {
+          "id": "019fc574-86fb-7000-926f-13bd31fb7823",
+          "name": "Reality Anchor",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "019fc574-7caf-7000-ba01-e1b1512ba385",
+          "name": "Operator Privilege",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "2f3e43da-6e10-4aae-ac5f-b2da506821ed",
+          "name": "Operator Action Resolution",
+          "enabled": true,
+          "controls": [
+            "Interruptible User Actions"
+          ]
+        },
+        {
+          "id": "019fc574-8222-7000-9f6b-2cd02731271d",
+          "name": "Affective Bias",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-10",
+      "title": "The Neural Dock and memory",
+      "tagline": "Menus, commentary, and continuity you can inspect.",
+      "description": "Fork suggests next moves. Conductance tracks the primary relationship. Deep Archive is the master for continuity trackers such as offscreen activity, relationships, unresolved threads, and factions. EiDOS, Kazz, diagnostics, and inventory are separate optional panels.",
+      "tip": "Archive children need Deep Archive. Protected discovery hides spoiler-bearing panels; group routing suspends the primary-pair meter. Chat context still limits memory.",
+      "blocks": [
+        {
+          "id": "e2f3a4b5-c67d-8e9f-0a1b-2c3d4e5f6a7b",
+          "name": "INTERACTIVE PROTOCOLS",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "019fc5d7-bdc8-7000-a1f5-9c5dc7a7d673",
+          "name": "Somatic Surface Scan",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "01a07f3a-7938-7000-bebd-06891f67ea33",
+          "name": "PIPELINE LOCK",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+          "name": "CYOA - Fork Protocol",
+          "enabled": true,
+          "controls": [
+            "Fork Protocol"
+          ]
+        },
+        {
+          "id": "a4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+          "name": "Affective Conductance",
+          "enabled": true,
+          "controls": [
+            "Affective Conductance Rate"
+          ]
+        },
+        {
+          "id": "f5a6b7c8-d9e0-1f2a-3b4c-5d6e7f8a9b0c",
+          "name": "Memory Spine (Deep Archive)",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "00d89c6f-7118-4ab3-83c5-5d0e0189820a",
+          "name": "Peripheral Processes",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "5dea9d63-b59c-4e54-b569-595b88668131",
+          "name": "Subvocal Leakage",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "ce8d29a3-6529-4aa4-a698-af4d7f3ac766",
+          "name": "Affective State Archive",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "3e8c4fc6-3dcf-4b52-9d70-3f21fa7b86aa",
+          "name": "Relationship Mesh",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "6b751d7f-6e50-4702-ba57-97d72cd67f28",
+          "name": "Latent Threads",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "933bdd60-dc02-4ba7-9987-c1869ce9268b",
+          "name": "Sealed Pressure Vector",
+          "enabled": true,
+          "controls": [
+            "Sealed Pressure Vector"
+          ]
+        },
+        {
+          "id": "8d2eaf56-3fe1-4e16-84cb-3d428219a361",
+          "name": "Network Organisms",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "d3e4f5a6-b7c8-9d0e-1f2a-3b4c5d6e7f8a",
+          "name": "EiDOS Core Trace",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "01a046ec-e1ea-7000-bded-4dfbbfc82025",
+          "name": "Kazz Parasite Feed",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "e4f5a6b7-c8d9-0e1f-2a3b-4c5d6e7f8a9b",
+          "name": "Intrusion Signal",
+          "enabled": false,
+          "controls": [
+            "Intrusion — Guest Name",
+            "Intrusion — Guest Personality",
+            "Intrusion — Guest Voice"
+          ]
+        },
+        {
+          "id": "a6b7c8d9-e0f1-2a3b-4c5d-6e7f8a9b0c1e",
+          "name": "Error Bloom // Character Diagnostic",
+          "enabled": false,
+          "controls": []
+        },
+        {
+          "id": "b5c6d7e8-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
+          "name": "Subject Status HUD",
+          "enabled": false,
+          "controls": []
+        }
+      ]
+    },
+    {
+      "id": "guide-category-11",
+      "title": "The visual layer",
+      "tagline": "How story information appears on screen.",
+      "description": "Chromatic Vocal Tissue gives speakers stable colors. Vocal Chambers adds dialogue cards; Kinetic Vocal Tissue adds delivery effects. Screen and material modules render relevant objects. Mnemonic Scenography illustrates simple details, and Serial Imprint adds chapter presentation.",
+      "tip": "Use the feature variables and one matching LIGHT or DARK regex set. More elaborate markup uses extra output space; frontend support affects the result.",
+      "blocks": [
+        {
+          "id": "d7e8f90a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "name": "Render Modules & Frontend Tissue",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "f90a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c",
+          "name": "Chromatic Vocal Tissue",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "e8f90a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b",
+          "name": "Diegetic Interface Rendering",
+          "enabled": true,
+          "controls": [
+            "Surface Interface",
+            "Immersive Interface",
+            "Deep Chassis"
+          ]
+        },
+        {
+          "id": "fca6c769-4c4a-464c-8500-9c9bd9c3e31d",
+          "name": "Material Artifact Rendering",
+          "enabled": true,
+          "controls": [
+            "Material Trace",
+            "Worn Archive",
+            "Deep Material"
+          ]
+        },
+        {
+          "id": "019fc576-bd88-7000-930c-0614897e7e61",
+          "name": "Environmental Haptics",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "c741df02-3520-4000-a002-000000000001",
+          "name": "Mnemonic Scenography // Immersive HTML",
+          "enabled": true,
+          "controls": [
+            "Mnemonic Scenography"
+          ]
+        },
+        {
+          "id": "c741df02-3520-4000-a003-000000000001",
+          "name": "Kinetic Vocal Tissue // Dialogue & SFX",
+          "enabled": true,
+          "controls": [
+            "Kinetic Vocal Tissue"
+          ]
+        },
+        {
+          "id": "b3525000-0000-4000-8000-000000000003",
+          "name": "Vocal Chambers // Dialogue Cards",
+          "enabled": true,
+          "controls": [
+            "Vocal Chambers — Dialogue Cards"
+          ]
+        },
+        {
+          "id": "b3525000-0000-4000-8000-000000000004",
+          "name": "Serial Imprint // Light Novel",
+          "enabled": true,
+          "controls": [
+            "Serial Imprint — Light Novel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guide-category-12",
+      "title": "The final assembly",
+      "tagline": "How enabled features become one response.",
+      "description": "The compiler and seals assemble the active output contract. Cognition Route chooses a visible planning format; its effort setting can make it compact or omit it. The three route carriers stay enabled so the selected route can be chosen correctly.",
+      "tip": "Keep compilers, seals, and carriers enabled. Change the route or effort control instead. These settings do not control the provider’s private reasoning.",
+      "blocks": [
+        {
+          "id": "019fc919-b3d3-7000-ac23-e068070c55d9",
+          "name": "COGNITION CHAMBER",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b63",
+          "name": "Active Contract Compiler",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "46b53fb7-6688-4215-a214-5c7764103305",
+          "name": "Operator Sovereignty & Dock Seal",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "accb900f-f3c7-487f-b958-9eced60e6613",
+          "name": "Cognition Discipline",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b7c8d9e0-f1a2-3b4c-5d6e-7f8a9b0c1d2f",
+          "name": "Cognition Traces",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "0e3d36c8-b870-44a5-bca6-ecc6f5ed9361",
+          "name": "Cognition Route",
+          "enabled": true,
+          "controls": [
+            "Cognition Trace",
+            "Intimacy Cognition Append",
+            "Character Neurology Append",
+            "Appeasement Interdict",
+            "Visible Cognition Effort"
+          ]
+        },
+        {
+          "id": "d9e0f1a2-b3c4-5d6e-7f8a-9b0c1d2e3f41",
+          "name": "Closing Act [DO NOT TOUCH]",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "9f2c6b2a-28b2-4b77-8df7-dc2b7de69b26",
+          "name": "EiDOS Reconstruction // Cognition Trace",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a0501c-019b-7000-ac86-2ed310b2fe09",
+          "name": "Creative Pathfinding // Cognition Trace",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "e67c7d9b-2180-4e2e-9d9f-1d12df01a612",
+          "name": "Kazz Override // Cognition Trace",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b3525000-0000-4000-8000-000000000002",
+          "name": "Compact Cognition // Light & Matrix",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "b4000000-0000-4000-8000-000000000005",
+          "name": "V4 Contract Seal // Keep On",
+          "enabled": true,
+          "controls": []
+        }
+      ]
+    }
+  ],
   "modules": [
     {
       "id": "b3525000-0000-4000-8000-000000000001",
@@ -22,6 +847,7 @@
           "type": "select",
           "description": "Roleplay: you own your avatar. Matrix: EiDOS authors the whole fictional cast, then offers six chapter directions. No automatic multi-chapter loop.",
           "default": "Roleplay — my avatar stays mine",
+          "saved": "Roleplay — my avatar stays mine",
           "options": [
             "Roleplay — my avatar stays mine",
             "Matrix — EiDOS authors the cast"
@@ -32,7 +858,8 @@
           "label": "Matrix Chapter Words",
           "type": "number",
           "description": "Approximate chapter prose length in Matrix. Independent of RP Narrative Mass and trace budget; output limits still apply.",
-          "default": 1200
+          "default": 1200,
+          "saved": 1200
         }
       ]
     },
@@ -50,6 +877,7 @@
           "type": "select",
           "description": "Group mode: Inactive in solo chats and Matrix. Focus: one card owns the turn. Ensemble: the present eligible cast may interact.",
           "default": "Off — existing RP",
+          "saved": "Off — existing RP",
           "options": [
             "Off — existing RP",
             "Focus — selected member only",
@@ -72,6 +900,7 @@
           "type": "select",
           "description": "Protected modes suppress spoiler-bearing modules without changing their saved switches. Strict overrides close/first-person NPC POV.",
           "default": "Open — backstage available",
+          "saved": "Open — backstage available",
           "options": [
             "Open — backstage available",
             "Dramatic irony — scoped glimpses",
@@ -83,7 +912,8 @@
           "label": "Permitted glimpse / reveal scope",
           "type": "text",
           "description": "Optional scope for Dramatic irony, e.g. the guard is worried about a public inspection. Does not authorize invented secrets. Strict does not allow private/offscreen glimpses.",
-          "default": ""
+          "default": "",
+          "saved": ""
         }
       ]
     },
@@ -101,6 +931,7 @@
           "type": "select",
           "description": "New uncertain actions become attempts. Player d6 needs real external dice and a matching check ID; Diceless makes no randomness claim.",
           "default": "Off — ordinary roleplay",
+          "saved": "Off — ordinary roleplay",
           "options": [
             "Off — ordinary roleplay",
             "Player d6 — declared stakes, external roll",
@@ -122,7 +953,8 @@
           "label": "Recognize transition commands",
           "type": "switch",
           "description": "Explicit [Cut: ...], [Montage: ...], [Downtime: ...] only. Does not enable automatic time skips.",
-          "default": 0
+          "default": 0,
+          "saved": 0
         }
       ]
     },
@@ -139,21 +971,24 @@
           "label": "Narrative Mass",
           "type": "number",
           "description": "Final-scene word aim when both Free-Flow and Pulse are off. Usual range ±15%; upper bound is the ceiling. Includes dialogue/thought text; excludes trace and Dock. Thin or agency-limited turns may be shorter.",
-          "default": 550
+          "default": 550,
+          "saved": 600
         },
         {
           "name": "narrative_mass_free_flow",
           "label": "Free-Flow Narrative Mass",
           "type": "switch",
           "description": "On: scene-selected length without a numeric target. Off: use Narrative Mass unless Pulse is on. Pulse takes precedence over both.",
-          "default": 0
+          "default": 0,
+          "saved": 0
         },
         {
           "name": "pulse_mode",
           "label": "Pulse Mode — Responsive Turn Size",
           "type": "switch",
           "description": "Opt-in: one reaction or several paragraphs, ending at a meaningful handoff. Overrides Narrative Mass and Free-Flow while On; leaves interface modules active.",
-          "default": 0
+          "default": 0,
+          "saved": 0
         }
       ]
     },
@@ -171,6 +1006,7 @@
           "type": "select",
           "description": "Select first-, second-, or third-person narrative perspective.",
           "default": "3rd Person (External Sensor Array)",
+          "saved": "1st Person (Ocular Feed)",
           "options": [
             "1st Person (Ocular Feed)",
             "2nd Person (Neural Address)",
@@ -193,6 +1029,7 @@
           "type": "select",
           "description": "EiDOS literary framing or character-colored narration. Independent of POV, cognition route, and paragraph structure.",
           "default": "EiDOS // Literary Frame",
+          "saved": "EiDOS // Literary Frame",
           "options": [
             "EiDOS // Literary Frame",
             "Neural Inhabitation // Character Voice"
@@ -223,6 +1060,7 @@
           "type": "select",
           "description": "Optional fictional-persona pronouns/gender grounding. One selection prevents conflicting toggles; Follow persona is the default. A newer explicit OOC correction takes precedence. They/them preserves stated gender.",
           "default": "Follow persona / no override",
+          "saved": "He / him — man",
           "options": [
             "Follow persona / no override",
             "He / him — man",
@@ -245,7 +1083,8 @@
           "label": "Subject Resistance",
           "type": "slider",
           "description": "Controls how readily characters yield while preserving their established personality.",
-          "default": 3
+          "default": 3,
+          "saved": 2
         }
       ]
     },
@@ -289,7 +1128,8 @@
           "label": "Antagonist targets",
           "type": "text",
           "description": "Exact character/faction names. Blank preserves Integrity only; no profile is applied to the whole cast.",
-          "default": ""
+          "default": "",
+          "saved": ""
         },
         {
           "name": "antagonist_method",
@@ -297,6 +1137,7 @@
           "type": "select",
           "description": "Applies only to named targets, subordinate to established characterization.",
           "default": "Canon — no imposed method",
+          "saved": "Canon — no imposed method",
           "options": [
             "Canon — no imposed method",
             "Strategist — leverage and contingency",
@@ -310,6 +1151,7 @@
           "type": "select",
           "description": "A ceiling, never new powers, allies or access.",
           "default": "Established reach only",
+          "saved": "Established reach only",
           "options": [
             "Established reach only",
             "Personal — direct contact and means",
@@ -322,7 +1164,8 @@
           "label": "Restraints and vulnerabilities",
           "type": "text",
           "description": "Optional limits/commitments to apply to named antagonists; no retroactive erasure of canon.",
-          "default": ""
+          "default": "",
+          "saved": ""
         }
       ]
     },
@@ -339,7 +1182,8 @@
           "label": "Fork Protocol",
           "type": "switch",
           "description": "On: offer five operator-owned choices at a valid handoff. Off: never offer or execute numbered Fork choices. Keep this carrier block enabled; use this switch instead.",
-          "default": 1
+          "default": 1,
+          "saved": 1
         }
       ]
     },
@@ -356,7 +1200,8 @@
           "label": "Affective Conductance Rate",
           "type": "slider",
           "description": "Maximum per-turn Affinity shift; Sparks and Grudge remain momentum counters.",
-          "default": 5
+          "default": 5,
+          "saved": 2
         }
       ]
     },
@@ -418,7 +1263,8 @@
           "label": "Vocal Chambers — Dialogue Cards",
           "type": "switch",
           "description": "Separate present spoken dialogue into EiDOS panels. Coexists with speaker colors and Kinetic effects; does not style every quoted string.",
-          "default": 0
+          "default": 0,
+          "saved": 1
         }
       ]
     },

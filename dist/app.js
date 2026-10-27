@@ -55,7 +55,7 @@
   });
 
   function moduleHTML(m){
-    const controls=m.controls.length?m.controls.map(c=>`<div class="control-note"><strong>${escape(c.label)}</strong><p>${escape(c.description)}</p><div class="micro">EXPORT DEFAULT / ${escape(c.default)}</div>${c.options?`<p class="control-options">Choices: ${c.options.map(escape).join(' · ')}</p>`:''}</div>`).join(''):`<div class="control-note"><strong>Prompt block</strong><p>Find “${escape(m.name)}” in the preset editor. This module may depend on a master setting or play mode.</p></div>`;
+    const controls=m.controls.length?m.controls.map(c=>`<div class="control-note"><strong>${escape(c.label)}</strong><p>${escape(c.description)}</p><div class="micro">SAVED IN THE DOWNLOAD / ${escape(c.saved??c.default)}</div>${c.saved!==undefined&&c.saved!==c.default?`<div class="micro factory-note">FACTORY DEFAULT / ${escape(c.default)}</div>`:''}${c.options?`<p class="control-options">Choices: ${c.options.map(escape).join(' · ')}</p>`:''}</div>`).join(''):`<div class="control-note"><strong>Prompt block · ${m.enabled?'enabled':'disabled'} in the release</strong><p>Find “${escape(m.name)}” in the preset editor. This module may depend on a master setting or play mode.</p></div>`;
     return `<details class="module-card" data-category="${escape(m.category)}"><summary><span class="micro">${escape(m.category)} / MODULE</span><span class="disclosure" aria-hidden="true">+</span><h3>${escape(m.name)}</h3><p class="tagline">${escape(m.tagline)}</p></summary><div class="module-body"><p>${escape(m.description)}</p>${controls}</div></details>`;
   }
   function renderModules(){
@@ -97,6 +97,7 @@
     try{
       const [r,d]=await Promise.all(['release.json','demos.json'].map(async url=>{const response=await fetch(url);if(!response.ok)throw new Error(`${url}: ${response.status}`);return response.json();}));
       release=r;
+      $('#category-guide').innerHTML=r.categories.map((c,i)=>`<details class="category-card"><summary><span class="category-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span><h3>${escape(c.title)}</h3><p>${escape(c.tagline)}</p></span><span class="disclosure" aria-hidden="true">+</span></summary><div class="category-body"><p>${escape(c.description)}</p><p class="category-tip"><strong>How to use it:</strong> ${escape(c.tip)}</p><h4>Blocks in this category</h4><ul class="category-blocks">${c.blocks.map(b=>`<li><span>${escape(b.name)}</span>${b.controls.length?`<small>Controls: ${b.controls.map(escape).join(' · ')}</small>`:''}</li>`).join('')}</ul></div></details>`).join('');
       for(const [key,html] of Object.entries(d)){const panel=$(`#demo-${key}`);if(panel)panel.innerHTML=html;}
       // Open the archive's outer shell in its own specimen; keep its inner sections interactive.
       const archive=$('#demo-archive .mh-archive-module');if(archive)archive.open=true;
@@ -105,6 +106,7 @@
       renderModules();applySkin();setMotion(quiet);activateTab(view);
     }catch(error){
       console.error('BlackBox content failed to load:',error.message);
+      $('#category-guide').innerHTML='<p class="empty-state">The category map could not load. Use the Retry loading button in the field guide below.</p>';
       $('#module-grid').innerHTML='<p class="empty-state">The guide could not load. The download and installation instructions are still available. <button class="small-control" id="retry-content" type="button">Retry loading</button></p>';
       $('#demo-scene').innerHTML='<p>Interactive examples are temporarily unavailable. Please retry from the field guide below.</p>';
       $('#retry-content').addEventListener('click',load,{once:true});
