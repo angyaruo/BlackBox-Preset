@@ -40,4 +40,15 @@ check('Controls include keyboard access, reduced motion, and data-load recovery'
   for(const token of ['ArrowRight','ArrowLeft','ArrowDown','ArrowUp','Home','End','retry-content','clipboard.writeText','aria-selected','aria-pressed'])assert(app.includes(token),token);
   assert(css.includes('prefers-reduced-motion'));assert(css.includes('focus-visible'));assert(html.includes('skip-link'));assert(html.includes('<noscript>'));
 });
+check('The category guide covers every block once and shows saved selections accurately',()=>{
+  const preset=JSON.parse(read('downloads/'+release.filename));
+  const ids=release.categories.flatMap(c=>c.blocks.map(b=>b.id));
+  assert.equal(ids.length,preset.blocks.length);assert.equal(ids.length,new Set(ids).size);
+  assert.deepEqual(new Set(ids),new Set(preset.blocks.map(b=>b.id)));
+  for(const m of release.modules)for(const c of m.controls){
+    const b=preset.blocks.find(b=>b.id===m.id),v=b.variables.find(v=>v.name===c.name),saved=preset.promptVariables[b.id]?.[v.name]??v.defaultValue;
+    assert.equal(c.saved,v.options?.find(o=>o.id===saved)?.label??saved);
+  }
+});
+await import('./check-configurator.mjs');
 console.log(JSON.stringify({passed:checks.length,checks,modules:release.modules.length,bytes:release.bytes,sha256:release.sha256},null,2));

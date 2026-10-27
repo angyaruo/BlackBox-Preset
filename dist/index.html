@@ -13,12 +13,13 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/metalheart.css">
   <script src="app.js" defer></script>
+  <script src="configurator.js" type="module"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="BlackBox home"><span class="orbit-mark" aria-hidden="true">✦</span><span>BLACKBOX<small>EiDOS / METALHEART</small></span></a>
-    <nav aria-label="Main navigation"><a href="#experience">Interface</a><a href="#field-guide">Field guide</a><a href="#start">Quick start</a><a href="#release">Download <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#experience">Interface</a><a href="#inside">Inside BlackBox</a><a href="#configure">Build my preset</a><a href="#release">Download <span aria-hidden="true">↗</span></a></nav>
     <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span class="status-light" aria-hidden="true"></span><span>Motion on</span></button>
   </header>
   <main id="main">
@@ -82,6 +83,14 @@
       </div>
     </section>
 
+    <section class="inside-section section-shell" id="inside" aria-labelledby="inside-title">
+      <div class="section-index"><span>04</span><span>INSIDE THE BLACKBOX</span></div>
+      <div class="section-heading"><div><h2 id="inside-title">The names are strange.<br><em>The controls don’t have to be.</em></h2><p>A plain-language map of every prompt category, from the story’s foundations to the finishing touches.</p></div><a class="text-link" href="#configure">Help me choose ↗</a></div>
+      <div class="guide-primer"><article><span class="micro blue">01 / BLOCK</span><h3>A piece of the instructions.</h3><p>A block tells the model how to write, supplies context, or connects other pieces. Turning off a structural block can break more than one feature.</p></article><article><span class="micro amber">02 / CUSTOM VARIABLE</span><h3>The switch you actually use.</h3><p>Many blocks stay enabled while a variable chooses their mode. “Enabled block” does not always mean “active feature.”</p></article><article><span class="micro rose">03 / REGEX</span><h3>The display layer.</h3><p>Regex rules format tagged output and clean up context. They cannot make a model follow a prompt or supply a missing scene.</p></article></div>
+      <div id="category-guide" class="category-guide"><p class="loading">Loading the category map…</p></div>
+      <p class="subtle-note">Looking for a specific control? <a href="#field-guide" class="text-link">Search the detailed module notes below ↓</a></p>
+    </section>
+
     <section class="guide section-shell" id="field-guide" aria-labelledby="guide-title">
       <div class="section-index"><span>04</span><span>FIELD GUIDE</span></div>
       <div class="section-heading"><div><h2 id="guide-title">Find your kind of story.</h2><p>A guided selection of controls from the current build. Open a module for its settings.</p></div><span class="outline-chip">24 MODULE NOTES</span></div>
@@ -89,12 +98,29 @@
       <div class="filter-row" role="group" aria-label="Module categories"><button data-category="All" aria-pressed="true">All modules</button><button data-category="Play" aria-pressed="false">Play</button><button data-category="Writing" aria-pressed="false">Writing</button><button data-category="Character" aria-pressed="false">Character</button><button data-category="Memory" aria-pressed="false">Memory</button><button data-category="Interface" aria-pressed="false">Interface</button><span id="module-count" class="micro" aria-live="polite"></span></div>
       <div class="module-grid" id="module-grid"><p class="loading">Loading the field guide…</p></div>
       <button class="small-control" id="show-modules" type="button" hidden style="margin-top:20px">Show all module notes ↓</button>
-      <p class="subtle-note">Settings shown here are documented defaults from this export. Saved chat settings and controlling modes can change what is active. Keep structural carrier blocks enabled; use their custom-variable controls where provided.</p>
+      <p class="subtle-note">“Saved in the download” is the release’s saved selection; “Factory default” is the block’s reset value. They can differ. Existing chat settings and controlling modes can change what is active. Keep structural carrier blocks enabled; use their custom-variable controls where provided.</p>
+    </section>
+
+    <section class="configurator-section section-shell" id="configure" aria-labelledby="configure-title">
+      <div class="section-index"><span>05</span><span>PERSONAL CONFIGURATION</span></div>
+      <div class="section-heading"><div><h2 id="configure-title">A little interview.<br><em>A BlackBox of your own.</em></h2><p>Tell us how you like to play. Leave with a Lumiverse file whose switches are already set.</p></div><span class="outline-chip">IN YOUR BROWSER / NO API</span></div>
+      <div class="interview-console">
+        <div id="interview-welcome" class="interview-welcome"><div><span class="micro blue">EiDOS / OPERATOR INTAKE</span><h3>Let’s find your starting point.</h3><p>Seven short steps cover your role, prose, persona, visuals, and optional panels. Each has a starting suggestion you can change. You’ll see a review before anything downloads.</p><p>The original release stays intact. Answers stay in this tab and disappear when you reload; no account, API key, or model call is needed.</p><button id="start-interview" class="button primary" type="button">Build my preset <span aria-hidden="true">↗</span></button></div><aside><span class="intake-orbit" aria-hidden="true">✦</span><span class="micro">YOUR STORY / YOUR SETTINGS</span><p>Same BlackBox.<br>A different arrangement.</p><a class="text-link" href="#inside">Understand the pieces first ↑</a></aside></div>
+        <div id="interview-workspace" hidden>
+          <div class="interview-toolbar"><span class="micro" id="interview-progress-label"></span><button id="restart-interview" class="small-control" type="button">Start over</button></div>
+          <progress id="interview-progress" aria-labelledby="interview-progress-label" max="8" value="1"></progress>
+          <div id="restart-confirmation" class="restart-confirmation" hidden><p>Reset all answers to the starting suggestions?</p><button id="confirm-restart" class="small-control" type="button">Reset answers</button><button id="cancel-restart" class="small-control" type="button">Keep my answers</button></div>
+          <div class="interview-content"><h3 id="interview-heading" tabindex="-1"></h3><p id="interview-intro" class="interview-intro"></p><p id="interview-step-note" class="field-hint"></p><div id="interview-body"></div></div>
+          <div class="interview-navigation"><button id="interview-back" class="small-control" type="button">← Back</button><a class="text-link" href="#release">Prefer the original?</a><button id="interview-next" class="button secondary" type="button">Continue →</button></div>
+        </div>
+      </div>
+      <p class="config-status" id="interview-status" role="status" aria-live="polite"></p>
+      <p class="subtle-note">The interview changes a curated set of controls. Unlisted settings stay as supplied; the review shows the actual differences. It cannot guarantee a model’s behavior. You can fine-tune the imported copy in Lumiverse.</p>
     </section>
 
     <section class="starter-section section-shell" aria-labelledby="starter-title">
       <div class="section-index"><span>05</span><span>START WITH A DIRECTION</span></div>
-      <h2 id="starter-title">A few switches. A different lens.</h2><p class="section-intro">Suggested starting points to apply in Lumiverse—not separate preset downloads.</p>
+      <h2 id="starter-title">A few switches. A different lens.</h2><p class="section-intro">Prefer to set things yourself? These are manual checklists. For a ready-configured file, <a class="text-link" href="#configure">take the setup interview ↑</a>.</p>
       <div class="starter-layout"><div class="starter-options" role="tablist" aria-label="Suggested configurations" aria-orientation="vertical">
         <button id="starter-character" role="tab" aria-selected="true" aria-controls="starter-panel" data-starter="character"><span>01</span><b>Character drama</b><small>Let the relationship carry the scene.</small><span aria-hidden="true">↗</span></button>
         <button id="starter-mystery" role="tab" aria-selected="false" aria-controls="starter-panel" data-starter="mystery" tabindex="-1"><span>02</span><b>Blind investigation</b><small>Discover things when your character does.</small><span aria-hidden="true">↗</span></button>
@@ -125,6 +151,6 @@
     </div></section>
   </main>
   <footer class="site-footer section-shell"><div class="footer-brand"><span class="orbit-mark" aria-hidden="true">✦</span><div><strong>BLACKBOX</strong><span class="micro">DO NOT DISCONNECT WHILE DREAMING.</span></div></div><div><p>Created by Ángel / <a href="https://github.com/angyaruo">@angyaruo</a>.</p><p>EiDOS & Kazz are part of the BlackBox world.<br>Please preserve attribution when sharing substantial preset text.</p></div><div class="footer-links"><a href="https://github.com/angyaruo/BlackBox-Preset">Source repository ↗</a><a href="#release">Release & download</a><a href="#home">Back to the surface ↑</a><span class="micro">NO API KEYS · NO ANALYTICS</span></div></footer>
-  <noscript><div class="noscript-note">The download, installation guide, and FAQ work without JavaScript. Enable JavaScript for interactive examples and module search.</div></noscript>
+  <noscript><div class="noscript-note">The original download, installation guide, and FAQ work without JavaScript. Enable JavaScript for the category map, interactive examples, module search, and custom-preset interview.</div></noscript>
 </body>
 </html>

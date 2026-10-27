@@ -11,4 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: node --check dist/app.js
+      - run: node --check dist/configurator.js
       - run: node scripts/check.mjs

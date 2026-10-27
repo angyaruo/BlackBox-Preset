@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {categoryGuide} from './guide-data.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=process.argv[2];
@@ -92,8 +93,11 @@ const spec=[
 const modules=spec.map(([needle,category,tagline,description])=>{
   const block=preset.blocks.find(b=>b.name.toLowerCase().includes(needle.toLowerCase()));
   if(!block)throw new Error('Missing documented module: '+needle);
-  return {id:block.id,name:block.name.replace(/^[^A-Za-z]+/,''),category,tagline,description,enabled:block.enabled,controls:(block.variables||[]).map(v=>({name:v.name,label:v.label,type:v.type,description:v.description||'',default:v.options?.find(o=>o.id===v.defaultValue)?.label??v.defaultValue,options:v.options?.map(o=>o.label)}))};
+  return {id:block.id,name:block.name.replace(/^[^A-Za-z]+/,''),category,tagline,description,enabled:block.enabled,controls:(block.variables||[]).map(v=>{
+    const saved=preset.promptVariables?.[block.id]?.[v.name]??v.defaultValue;
+    return {name:v.name,label:v.label,type:v.type,description:v.description||'',default:v.options?.find(o=>o.id===v.defaultValue)?.label??v.defaultValue,saved:v.options?.find(o=>o.id===saved)?.label??saved,options:v.options?.map(o=>o.label)};
+  })};
 });
-const release={publicVersion:'1.0',build:'4.4.3',format:'Lumiverse',filename:'BLACKBOX-V1-build-4.4.3.json',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),moduleCount:modules.length,sourceName:preset.name,modules};
+const release={publicVersion:'1.0',build:'4.4.3',format:'Lumiverse',filename:'BLACKBOX-V1-build-4.4.3.json',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),moduleCount:modules.length,sourceName:preset.name,categories:categoryGuide(preset),modules};
 fs.writeFileSync(path.join(dist,'release.json'),JSON.stringify(release,null,2)+'\n');
 console.log(JSON.stringify({release:release.publicVersion,build:release.build,bytes:release.bytes,modules:modules.length,sha256:release.sha256,demos:Object.keys(demos),styles:styles.length}));
