@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {questions,defaults,configurePreset,activeNotes,answerSummary} from '../dist/configurator-core.js';
 
-const source=JSON.parse(fs.readFileSync(fileURLToPath(new URL('../dist/downloads/BLACKBOX-V1-build-4.4.3.json',import.meta.url)),'utf8'));
+const source=JSON.parse(fs.readFileSync(fileURLToPath(new URL('../dist/downloads/BLACKBOX-V1.json',import.meta.url)),'utf8'));
 const snapshot=JSON.stringify(source);
 const value=(p,name)=>{const b=p.blocks.find(b=>b.variables?.some(v=>v.name===name)),v=b.variables.find(v=>v.name===name);const raw=p.promptVariables[b.id]?.[name]??v.defaultValue;return v.options?.find(o=>o.id===raw)?.value??raw;};
 const enabled=(p,name)=>p.blocks.find(b=>b.name.includes(name)).enabled;

@@ -1,0 +1,2 @@
+# Release checksums must survive checkout on every operating system.
+dist/downloads/*.json -text

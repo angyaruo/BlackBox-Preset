@@ -1,4 +1,4 @@
-// Plain-language explanations. Membership follows the reviewed V4.4.3 block order;
+// Plain-language explanations. Membership follows the reviewed V1 block order;
 // the boundary assertions make a changed release require an editorial review.
 export function categoryGuide(preset){
   const groups=[

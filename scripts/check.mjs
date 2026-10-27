@@ -12,7 +12,7 @@ const check=(name,fn)=>{fn();checks.push(name);};
 check('Download is exactly the documented source build',()=>{
   const bytes=fs.readFileSync(path.join(root,'downloads',release.filename));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),release.sha256);assert.equal(bytes.length,release.bytes);
-  const preset=JSON.parse(bytes);assert.equal(preset.name,release.sourceName);assert.equal(release.publicVersion,'1.0');assert.equal(release.build,'4.4.3');
+  const preset=JSON.parse(bytes);assert.equal(preset.name,release.sourceName);assert.equal(release.publicVersion,'1.0');assert.equal(release.presetVersion,'1.0.0');assert.equal(preset.presetVersion,'1.0.0');assert.equal(preset.name,'BLACKBOX // EiDOS : METALHEART · V1');assert.equal(release.filename,'BLACKBOX-V1.json');
   for(const m of release.modules){const b=preset.blocks.find(b=>b.id===m.id);assert(b);for(const c of m.controls){const v=b.variables.find(v=>v.name===c.name);assert.equal(c.default,v.options?.find(o=>o.id===v.defaultValue)?.label??v.defaultValue);}}
 });
 check('Local links and image/script/stylesheet assets exist under the project path',()=>{
@@ -51,4 +51,5 @@ check('The category guide covers every block once and shows saved selections acc
   }
 });
 await import('./check-configurator.mjs');
+await import('./check-v1-repairs.mjs');
 console.log(JSON.stringify({passed:checks.length,checks,modules:release.modules.length,bytes:release.bytes,sha256:release.sha256},null,2));

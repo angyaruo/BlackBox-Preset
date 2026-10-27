@@ -9,10 +9,11 @@ const source=process.argv[2];
 const portraitSource=process.argv[3];
 if(!source) throw new Error('Pass the current Lumiverse export as the first argument.');
 const bytes=fs.readFileSync(source), preset=JSON.parse(bytes);
+if(preset.presetVersion!=='1.0.0'||preset.name!=='BLACKBOX // EiDOS : METALHEART · V1')throw new Error('Expected the reviewed official V1 export.');
 const dist=path.join(root,'dist');
 fs.mkdirSync(path.join(dist,'downloads'),{recursive:true});
 fs.mkdirSync(path.join(dist,'assets'),{recursive:true});
-fs.copyFileSync(source,path.join(dist,'downloads','BLACKBOX-V1-build-4.4.3.json'));
+fs.copyFileSync(source,path.join(dist,'downloads','BLACKBOX-V1.json'));
 if(portraitSource){
   const html=fs.readFileSync(portraitSource,'utf8');
   const match=html.match(/<template id="hl-portrait"><img src="data:image\/([^;]+);base64,([^"]+)/);
@@ -98,6 +99,6 @@ const modules=spec.map(([needle,category,tagline,description])=>{
     return {name:v.name,label:v.label,type:v.type,description:v.description||'',default:v.options?.find(o=>o.id===v.defaultValue)?.label??v.defaultValue,saved:v.options?.find(o=>o.id===saved)?.label??saved,options:v.options?.map(o=>o.label)};
   })};
 });
-const release={publicVersion:'1.0',build:'4.4.3',format:'Lumiverse',filename:'BLACKBOX-V1-build-4.4.3.json',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),moduleCount:modules.length,sourceName:preset.name,categories:categoryGuide(preset),modules};
+const release={publicVersion:'1.0',presetVersion:'1.0.0',format:'Lumiverse',filename:'BLACKBOX-V1.json',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),moduleCount:modules.length,sourceName:preset.name,categories:categoryGuide(preset),modules};
 fs.writeFileSync(path.join(dist,'release.json'),JSON.stringify(release,null,2)+'\n');
-console.log(JSON.stringify({release:release.publicVersion,build:release.build,bytes:release.bytes,modules:modules.length,sha256:release.sha256,demos:Object.keys(demos),styles:styles.length}));
+console.log(JSON.stringify({release:release.publicVersion,presetVersion:release.presetVersion,bytes:release.bytes,modules:modules.length,sha256:release.sha256,demos:Object.keys(demos),styles:styles.length}));
