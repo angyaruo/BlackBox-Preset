@@ -1,7 +1,10 @@
 {
   "name": "blackbox-release-hub",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "private": true,
   "type": "module",
-  "scripts": {"start": "node scripts/serve.mjs", "check": "node scripts/check.mjs"}
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  }
 }

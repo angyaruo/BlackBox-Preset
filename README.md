@@ -1,8 +1,8 @@
-# BLACKBOX // EiDOS — Public V1
+# BLACKBOX // EiDOS — V1.2.1
 
 A static release hub and interactive field guide for the METALHEART roleplay preset, created for Ángel / [@angyaruo](https://github.com/angyaruo).
 
-The official release is V1 in both the website and imported preset name, with `presetVersion: "1.0.0"`. It includes the reviewed Dock, archive, dialogue, and card-intake repairs. Renaming the repaired release preserves all prompt content, regex rules, and creator-saved settings. The site does not call a model provider.
+The official release is V1.2.1 (`presetVersion: "1.2.1"`). Its SHA-256 is pinned in `dist/release-contract.js`; preparation copies those exact reviewed bytes. The guide and interview use the current 108-block structure, exclusive length mode, fixed character checks and grouped Presentation controls. The site does not call a model provider.
 
 The setup interview also creates a separately named **Custom** copy in the visitor’s browser. It does not replace the original download. Seven steps cover participation, reading preferences, prose, persona, visuals, commentary, and visible planning; a review shows saved choices, mode precedence, and a diff against the original export. Unlisted controls remain unchanged. Answers are held only in tab memory and are lost on reload.
 
@@ -22,7 +22,7 @@ Install Node.js, then run `npm start` from this directory. Open the printed loca
 - `dist/configurator.js`: accessible interview, release-checksum verification, custom JSON download, and an optional plain-text settings receipt.
 - `scripts/guide-data.mjs`: twelve plain-language category explanations covering every block. Membership is checked against the reviewed release structure.
 - `scripts/check-configurator.mjs`: validates all offered options and mode combinations, saved/default agreement, skin pairing, rejection paths, and preservation of everything outside the allowed settings.
-- `dist/downloads/BLACKBOX-V1.json`: official release export. The earlier preview-build file is retained only for existing links.
+- `dist/downloads/BLACKBOX-V1.2.1.json`: official release export. The earlier preview-build file is retained only for existing links.
 - `scripts/prepare.mjs`: regenerates release data, demo markup, and display CSS from an explicitly supplied current export. It does not modify that input.
 
 ## GitHub Pages
@@ -51,6 +51,6 @@ The preset is a Lumiverse export. A separately tested SillyTavern conversion, ex
 
 ## Custom-export contract
 
-The browser verifies the original download against `release.json` before enabling export. It deep-copies the preset, synchronizes the mapped variable defaults and `promptVariables` values (selects store option IDs), changes only selected optional block states and LIGHT/DARK regex flags, and gives the copy a distinct name. Prompt text, block IDs and order, regex patterns and replacements, provider settings, and all unrelated fields are preserved. Shared rules stay enabled as supplied. No instruction text is generated or executed by the configurator.
+The browser verifies the original download against `release.json` before enabling export. It deep-copies the preset, synchronizes the mapped variable defaults and `promptVariables` values (selects store option IDs), changes only selected optional block states and OG-dark/OG-light/LITE renderer flags, and gives the copy a distinct name. Prompt text, block IDs and order, regex patterns and replacements, provider settings, and all unrelated fields are preserved. Shared rules stay enabled as supplied. No instruction text is generated or executed by the configurator.
 
 Strict Discovery and other controlling modes can suppress saved choices. The review explains these interactions; the receipt records both the requested answers and the changed saved controls. Mature-content modules are off in the interview’s starting suggestions; a visitor can explicitly retain the original release’s content selections. This is a prompt preference, not an enforced content filter. The original release is never rewritten.

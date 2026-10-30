@@ -1,6 +1,7 @@
-import {questions,defaults,configurePreset,activeNotes,answerSummary} from './configurator-core.js';
+import {releaseContract} from './release-contract.js';
+import {questions,defaults,configurePreset,activeNotes,answerSummary} from './configurator-core.js?v=1.2.1';
 
-const $=s=>document.querySelector(s);
+const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let answers={...defaults},step=-1,source=null,loading=false,loadError='',downloading=false;
 const status=$('#interview-status');
@@ -13,9 +14,9 @@ function download(text,name,type='application/json'){
 
 async function loadSource(){
   if(source)return source;
-  const r=await fetch('release.json');if(!r.ok)throw new Error('Release information is unavailable.');
+  const r=await fetch('release.json?v=1.2.1');if(!r.ok)throw new Error('Release information is unavailable.');
   const release=await r.json();
-  if(release.presetVersion!=='1.0.0'||release.filename!=='BLACKBOX-V1.json')throw new Error('This release needs an updated configurator. Please use the original download.');
+  if(release.presetVersion!==releaseContract.version||release.filename!==releaseContract.filename||release.sha256!==releaseContract.sha256)throw new Error('This release needs an updated configurator. Please use the original download.');
   const response=await fetch(`downloads/${release.filename}`);if(!response.ok)throw new Error('The original preset could not be loaded.');
   const bytes=await response.arrayBuffer();
   const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -26,6 +27,7 @@ async function loadSource(){
 }
 
 function fieldHTML(field){
+  if(field.type==='text'||field.type==='number')return `<fieldset class="interview-field"><legend>${escape(field.label)}</legend><p class="field-hint">${escape(field.hint)}</p><input class="interview-text" name="${field.key}" type="${field.type}" value="${escape(answers[field.key])}" ${field.type==='text'?`maxlength="${field.maxLength}" placeholder="${escape(field.placeholder)}"`:`min="${field.min}" max="${field.max}" step="${field.step}"`} aria-label="${escape(field.label)}" required></fieldset>`;
   const disabled=field.key==='rules'&&answers.session==='matrix';
   return `<fieldset class="interview-field" ${disabled?'disabled':''}><legend>${escape(field.label)}</legend>${disabled?'<p class="field-hint">Matrix handles chapter outcomes, so Field Rules will be off in this download.</p>':''}<div class="answer-grid">${field.options.map(([value,label,description])=>`<label class="answer-choice"><input type="radio" name="${field.key}" value="${value}" ${answers[field.key]===value?'checked':''}><span><strong>${escape(label)}</strong><small>${escape(description)}</small></span></label>`).join('')}</div></fieldset>`;
 }
@@ -34,7 +36,7 @@ function reviewHTML(){
   const result=source?configurePreset(source,answers):null;
   const summary=answerSummary(answers).map(f=>`<div><dt>${escape(f.label)}</dt><dd>${escape(f.effective)}${f.effective!==f.requested?`<small class="requested-choice">Your answer: ${escape(f.requested)}</small>`:''}</dd></div>`).join('');
   const changes=result?.changes.filter(c=>c.changed)||[];
-  return `<div class="interview-review"><div><h3>Your configuration, explained.</h3><p class="interview-intro">This is a starting point based on your answers, not a prediction of your ideal story. You can edit any answer before downloading.</p><dl class="answer-summary">${summary}</dl></div><aside class="config-receipt"><span class="micro blue">PUBLIC V1 / CUSTOM COPY</span><h3>Ready for your first scene.</h3><p>Prompt wording, character-source slots, and core history rules are preserved. This copy changes mapped controls and display overlays.</p><h4>How these choices work together</h4><ul>${activeNotes(answers).map(n=>`<li>${escape(n)}</li>`).join('')}</ul><p class="micro">ANSWERS STAY IN THIS TAB · NO MODEL REQUESTS</p></aside></div>
+  return `<div class="interview-review"><div><h3>Your configuration, explained.</h3><p class="interview-intro">This is a starting point based on your answers, not a prediction of your ideal story. You can edit any answer before downloading.</p><dl class="answer-summary">${summary}</dl></div><aside class="config-receipt"><span class="micro blue">PUBLIC V1.2.1 / CUSTOM COPY</span><h3>Ready for your first scene.</h3><p>Prompt wording, character-source slots, and core history rules are preserved. This copy changes mapped controls and display overlays.</p><h4>How these choices work together</h4><ul>${activeNotes(answers).map(n=>`<li>${escape(n)}</li>`).join('')}</ul><p class="micro">ANSWERS STAY IN THIS TAB · NO MODEL REQUESTS</p></aside></div>
   ${result?`<details class="config-diff"><summary>Compared with the original release · ${changes.length} setting changes <span aria-hidden="true">+</span></summary><div class="diff-scroll"><table><caption>Changes to saved settings. Matching factory defaults are synchronized too.</caption><thead><tr><th scope="col">Control</th><th scope="col">Original saved choice</th><th scope="col">Your saved choice</th></tr></thead><tbody>${changes.map(c=>`<tr><th scope="row">${escape(c.label)}</th><td>${escape(c.before)}</td><td>${escape(c.after)}</td></tr>`).join('')}</tbody></table></div></details>`:''}
   <div class="config-download"><button type="button" class="button primary" id="download-custom" ${!result||downloading?'disabled':''}>${downloading?'Preparing file…':'Download my BlackBox'} <span aria-hidden="true">↓</span></button><button type="button" class="small-control" id="download-receipt" ${!result?'disabled':''}>Save settings receipt</button><p>Import the custom JSON as a separate preset in Lumiverse. Its name includes “Custom”. Your original download remains available below.</p></div>
   ${loading?'<p class="loading" role="status">Checking the original release before creating your copy…</p>':''}
@@ -67,7 +69,7 @@ function render(focus=false){
   $('#download-receipt')?.addEventListener('click',()=>{
     const result=configurePreset(source,answers);
     const lines=answerSummary(answers).map(f=>`${f.label}: ${f.effective}${f.effective!==f.requested?` (your answer: ${f.requested})`:''}`);
-    download(['BLACKBOX V1 / custom settings / version 1.0.0','',...lines,'','Mode notes',...result.notes.map(n=>'- '+n),'','Changed saved controls',...result.changes.filter(c=>c.changed).map(c=>`${c.label}: ${c.before} → ${c.after}`)].join('\n'),'BLACKBOX-V1-custom-settings.txt','text/plain');
+    download(['BLACKBOX V1.2.1 / custom settings / version 1.2.1','',...lines,'','Mode notes',...result.notes.map(n=>'- '+n),'','Changed saved controls',...result.changes.filter(c=>c.changed).map(c=>`${c.label}: ${c.before} → ${c.after}`)].join('\n'),'BLACKBOX-V1.2.1-custom-settings.txt','text/plain');
     status.textContent='Settings receipt prepared for download.';
   });
   $('#retry-config')?.addEventListener('click',prepareReview);
@@ -81,12 +83,19 @@ async function prepareReview(){
 }
 
 $('#start-interview').addEventListener('click',()=>{step=0;status.textContent='';render(true);});
-$('#interview-body').addEventListener('change',e=>{
-  if(!e.target.matches('input[type=radio]'))return;
-  answers[e.target.name]=e.target.value;status.textContent='';
+function readAnswerInput(e){
+  if(!e.target.matches('input'))return;
+  answers[e.target.name]=e.target.type==='number'?Number(e.target.value):e.target.value;status.textContent='';
   if(e.target.name==='session')render();
+}
+$('#interview-body').addEventListener('input',readAnswerInput);
+$('#interview-body').addEventListener('change',readAnswerInput);
+$('#interview-next').addEventListener('click',()=>{
+  const inputs=all('#interview-body input');
+  if(inputs.filter(input=>input.required).some(input=>!input.reportValidity()))return;
+  for(const input of inputs)if(input.type!=='radio'||input.checked)answers[input.name]=input.type==='number'?Number(input.value):input.value;
+  step++;render(true);if(step===questions.length)prepareReview();
 });
-$('#interview-next').addEventListener('click',()=>{step++;render(true);if(step===questions.length)prepareReview();});
 $('#interview-back').addEventListener('click',()=>{if(step>0){step--;render(true);}});
 $('#restart-interview').addEventListener('click',()=>{$('#restart-confirmation').hidden=false;$('#confirm-restart').focus();});
 $('#cancel-restart').addEventListener('click',()=>{$('#restart-confirmation').hidden=true;$('#restart-interview').focus();});
