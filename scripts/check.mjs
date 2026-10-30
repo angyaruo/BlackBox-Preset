@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {releaseContract} from '../dist/release-contract.js';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../dist');
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const html=read('index.html'),app=read('app.js'),css=read('styles.css');
@@ -12,7 +13,7 @@ const check=(name,fn)=>{fn();checks.push(name);};
 check('Download is exactly the documented source build',()=>{
   const bytes=fs.readFileSync(path.join(root,'downloads',release.filename));
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),release.sha256);assert.equal(bytes.length,release.bytes);
-  const preset=JSON.parse(bytes);assert.equal(preset.name,release.sourceName);assert.equal(release.publicVersion,'1.0');assert.equal(release.presetVersion,'1.0.0');assert.equal(preset.presetVersion,'1.0.0');assert.equal(preset.name,'BLACKBOX // EiDOS : METALHEART · V1');assert.equal(release.filename,'BLACKBOX-V1.json');
+  const preset=JSON.parse(bytes);assert.equal(preset.name,release.sourceName);assert.equal(release.publicVersion,releaseContract.version);assert.equal(release.presetVersion,releaseContract.version);assert.equal(preset.presetVersion,releaseContract.version);assert.equal(preset.name,releaseContract.name);assert.equal(release.filename,releaseContract.filename);assert.equal(release.sha256,releaseContract.sha256);
   for(const m of release.modules){const b=preset.blocks.find(b=>b.id===m.id);assert(b);for(const c of m.controls){const v=b.variables.find(v=>v.name===c.name);assert.equal(c.default,v.options?.find(o=>o.id===v.defaultValue)?.label??v.defaultValue);}}
 });
 check('Local links and image/script/stylesheet assets exist under the project path',()=>{
@@ -20,7 +21,7 @@ check('Local links and image/script/stylesheet assets exist under the project pa
   for(const text of [html,...Object.values(demos)])for(const m of text.matchAll(/(?:href|src)="([^"]+)"/g)){
     const url=m[1];if(/^(https:|data:)/.test(url))continue;
     if(url.startsWith('#')){assert(ids.includes(url.slice(1)),url);continue;}
-    assert(!url.startsWith('/'),'Site paths must be relative for project Pages');assert(fs.existsSync(path.join(root,url)),url);
+    assert(!url.startsWith('/'),'Site paths must be relative for project Pages');assert(fs.existsSync(path.join(root,url.split('?')[0])),url);
   }
   for(const m of html.matchAll(/aria-(?:controls|labelledby)="([^"]+)"/g))for(const id of m[1].split(' '))assert(ids.includes(id),id);
 });
@@ -49,6 +50,9 @@ check('The category guide covers every block once and shows saved selections acc
     const b=preset.blocks.find(b=>b.id===m.id),v=b.variables.find(v=>v.name===c.name),saved=preset.promptVariables[b.id]?.[v.name]??v.defaultValue;
     assert.equal(c.saved,v.options?.find(o=>o.id===saved)?.label??saved);
   }
+  for(const c of release.categories)for(const b of c.blocks){const actual=preset.blocks.find(x=>x.id===b.id);assert.equal(b.name,actual.name.replace(/^[^\p{L}\p{N}]+/u,''));}
+  for(const m of release.modules){const actual=preset.blocks.find(x=>x.id===m.id);assert.equal(m.name,actual.name.replace(/^[^\p{L}\p{N}]+/u,''));}
+  assert(html.includes('downloads/'+release.filename));assert(html.includes('V'+releaseContract.version));assert(!html.includes('1.0.0'));
 });
 await import('./check-configurator.mjs');
 await import('./check-v1-repairs.mjs');

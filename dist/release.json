@@ -1,30 +1,24 @@
 {
-  "publicVersion": "1.0",
-  "presetVersion": "1.0.0",
+  "publicVersion": "1.2.1",
+  "presetVersion": "1.2.1",
   "format": "Lumiverse",
-  "filename": "BLACKBOX-V1.json",
-  "bytes": 1168416,
-  "sha256": "50433350446d686348baff75085ecaa4cbc494d4f653c455c545a92bd3c23bdb",
-  "moduleCount": 24,
-  "sourceName": "BLACKBOX // EiDOS : METALHEART · V1",
+  "filename": "BLACKBOX-V1.2.1.json",
+  "bytes": 1558567,
+  "sha256": "d77f5ce28dbd22a01f6a4e44a8aa4695ae756a21de205c5ac59a70816e455166",
+  "moduleCount": 32,
+  "sourceName": "BLACKBOX // EiDOS : METALHEART · V1.2.1",
   "categories": [
     {
       "id": "guide-category-1",
       "title": "Start here",
       "tagline": "Read the map, then use the controls.",
-      "description": "The Read Me explains the preset inside Lumiverse. It stays disabled because it is documentation, not part of the model’s request. The final Blank Prompt is an extra framing note, not a feature switch.",
-      "tip": "Read the documentation; leave structural blocks as supplied.",
+      "description": "Quick Start explains the preset inside Lumiverse. It stays disabled because it is editor documentation, not model input.",
+      "tip": "Read the guide; leave structural blocks as supplied.",
       "blocks": [
         {
           "id": "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
-          "name": "READ ME // BLACKBOX INTERFACE GUIDE ‼️",
+          "name": "Quick Start",
           "enabled": false,
-          "controls": []
-        },
-        {
-          "id": "01a16010-45d1-7000-b40b-0e813c03be99",
-          "name": "Blank Prompt",
-          "enabled": true,
           "controls": []
         }
       ]
@@ -32,49 +26,49 @@
     {
       "id": "guide-category-2",
       "title": "The storytelling foundation",
-      "tagline": "What BlackBox asks the model to care about.",
-      "description": "These instructions connect motives, observable actions, consequences, and continuity. They ask characters to behave like people and discourage repeating a point just to prove a personality trait.",
-      "tip": "Usually leave these enabled. They establish the shared writing contract.",
+      "tagline": "Character, consequence and continuous scenes.",
+      "description": "Roleplay Rules protect your avatar. Character Fidelity, Subtext & Perception and Cause & Consequence ground the cast. Repetition Control and Continuous Scenes discourage replaying a point or posing every reply as a handoff.",
+      "tip": "Usually leave these enabled. Characters may act independently without inventing your response.",
       "blocks": [
         {
           "id": "c2b3a4d5-e6f7-8a9b-0c1d-2e3f4a5b6c7d",
-          "name": "Core Nervous-System Directives",
+          "name": "EiDOS Core",
           "enabled": true,
           "controls": []
         },
         {
           "id": "d3c4b5a6-f7e8-9a0b-1c2d-3e4f5a6b7c8d",
-          "name": "GLOBAL PROTOCOLS: EiDOS",
+          "name": "Roleplay Rules",
           "enabled": true,
           "controls": []
         },
         {
           "id": "e4d5c6b7-a8f9-0b1c-2d3e-4f5a6b7c8d9e",
-          "name": "Somatic Method",
+          "name": "Subtext & Perception",
           "enabled": true,
           "controls": []
         },
         {
           "id": "a6b7c8d9-e0f1-2a3b-4c5d-6e7f8a9b0c1d",
-          "name": "Entity Integrity",
+          "name": "Character Fidelity",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc555-3db9-7000-81c5-6fe785d46d10",
-          "name": "Sequence Momentum",
+          "name": "Cause & Consequence",
           "enabled": true,
           "controls": []
         },
         {
           "id": "fc8b0393-5e93-481c-9519-8ea5a4f47545",
-          "name": "Signal Economy",
+          "name": "Repetition Control",
           "enabled": true,
           "controls": []
         },
         {
           "id": "0edc819d-4048-48d5-a8d9-db6897e78a7d",
-          "name": "Tension Lattice",
+          "name": "Continuous Scenes",
           "enabled": true,
           "controls": []
         }
@@ -84,24 +78,24 @@
       "id": "guide-category-3",
       "title": "Who plays, who knows, who resolves",
       "tagline": "The rules of participation.",
-      "description": "Session Architecture chooses roleplay or full-cast Matrix authorship. Polyphony coordinates real group chats. Black Veil limits what the reader can learn. Field Rules adds explicit stakes or external d6 checks, while Cut & Carry recognizes your transition commands.",
-      "tip": "Use their Custom Variables. Matrix overrides group and RPG routing; protected discovery suppresses backstage information.",
+      "description": "Session Mode chooses Roleplay or Chapter Writing. Group Chat coordinates real group chats. Black Veil limits disclosure; Action Checks handles explicit stakes or an external d6. Scene Transitions recognizes bounded Cut & Carry commands.",
+      "tip": "Use variables for modes. Scene Transitions is a disabled prompt-block opt-in; Chapter Writing overrides RP/group/check routing.",
       "blocks": [
         {
           "id": "b3525000-0000-4000-8000-000000000001",
-          "name": "Session Architecture",
+          "name": "Session Mode",
           "enabled": true,
           "controls": [
-            "Session Mode",
-            "Matrix Chapter Words"
+            "Story Mode",
+            "Chapter Word Aim"
           ]
         },
         {
           "id": "b4000000-0000-4000-8000-000000000001",
-          "name": "Polyphony",
+          "name": "Group Chat",
           "enabled": true,
           "controls": [
-            "Group turn ownership"
+            "Group Chat Mode"
           ]
         },
         {
@@ -109,38 +103,36 @@
           "name": "Black Veil",
           "enabled": true,
           "controls": [
-            "Reader access",
-            "Permitted glimpse / reveal scope"
+            "Spoiler Mode",
+            "Allowed Revelations"
           ]
         },
         {
           "id": "b4000000-0000-4000-8000-000000000003",
-          "name": "Field Rules: RPG Lite",
+          "name": "Action Checks",
           "enabled": true,
           "controls": [
-            "Resolution mode"
+            "Action Checks"
           ]
         },
         {
           "id": "b4000000-0000-4000-8000-000000000004",
-          "name": "Cut & Carry",
-          "enabled": true,
-          "controls": [
-            "Recognize transition commands"
-          ]
+          "name": "Scene Transitions",
+          "enabled": false,
+          "controls": []
         }
       ]
     },
     {
       "id": "guide-category-4",
-      "title": "The world and its source material",
-      "tagline": "Where the model gets the facts.",
-      "description": "These blocks bring in the scenario, character card, persona, lorebook, and conversation history. Canon Matrix organizes continuity. Extra character/persona slots can duplicate material already loaded elsewhere.",
-      "tip": "Keep source and section-wrapper blocks intact. Enable duplicate source slots only if your setup needs them.",
+      "title": "Host Environment",
+      "tagline": "Where the model gets its facts.",
+      "description": "These blocks supply the scenario, card, persona, world info and chat history. The Environment also governs ongoing world activity through fictional time and available evidence. Extra source slots can duplicate material already loaded elsewhere.",
+      "tip": "Keep source/wrapper blocks intact. Background work needs causes and elapsed story time, never human typing time.",
       "blocks": [
         {
           "id": "019fc92f-41b8-7000-9e42-88818f67f16b",
-          "name": "HOST ENVIRONMENT",
+          "name": "Host Environment",
           "enabled": true,
           "controls": []
         },
@@ -152,13 +144,13 @@
         },
         {
           "id": "019fc92f-ea2c-7000-8b50-6da8152c0278",
-          "name": "Operator Profile (User)",
+          "name": "Operator Profile",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc92f-c673-7000-9175-01cff5313556",
-          "name": "Entity Dossier (Char)",
+          "name": "Entity Dossier",
           "enabled": true,
           "controls": []
         },
@@ -170,13 +162,13 @@
         },
         {
           "id": "019fc559-2757-7000-a50c-a4cb18591bbd",
-          "name": "CANON MATRIX",
+          "name": "Story Context",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc564-5096-7000-afc0-5af7ce983a51",
-          "name": "Post-History",
+          "name": "Continuity Reminder",
           "enabled": false,
           "controls": []
         },
@@ -188,19 +180,19 @@
         },
         {
           "id": "019fc55e-ac9a-7000-b1cb-0bbe7a2f229d",
-          "name": "User Persona",
+          "name": "Persona Description",
           "enabled": false,
           "controls": []
         },
         {
           "id": "019fc55f-688b-7000-9357-268c28cbc145",
-          "name": "World Info (Before)",
+          "name": "World Info Before",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc562-d3f6-7000-aecf-ead9c1c5967e",
-          "name": "World Info (After)",
+          "name": "World Info After",
           "enabled": true,
           "controls": []
         },
@@ -214,39 +206,39 @@
     },
     {
       "id": "guide-category-5",
-      "title": "The narrative lens",
-      "tagline": "What the narration pays attention to.",
-      "description": "Perception Aperture changes emphasis: neutral observation, relationships, complications, or other selected genres. Anomaly Aperture controls how far unusual developments may depart from the established setting. Neither replaces world facts or the character card.",
-      "tip": "Choose a lens that suits the story. A romantic lens does not guarantee attraction; an adversity lens should not erase earned success.",
+      "title": "Narrator Lens",
+      "tagline": "What the narration notices.",
+      "description": "Choose The Observer, The Romantic, The Sensualist, The Transgressor, The Aggrieved Curator or The Serial Dramatist. Reality Anomalies limits new impossible facts. A lens changes emphasis, not canon or personality.",
+      "tip": "A romantic lens does not guarantee attraction, and complications must not erase earned success.",
       "blocks": [
         {
           "id": "01a05e06-3247-7000-b510-ce81c46d5400",
-          "name": "Perception Aperture (Genre)",
+          "name": "Narrator Lens",
           "enabled": true,
           "controls": [
-            "Perception Aperture"
+            "Narrator Lens"
           ]
         },
         {
           "id": "d9b636dd-d8bc-41bd-b129-c39e58e65fb8",
-          "name": "Anomaly Aperture (Optional)",
+          "name": "Reality Anomalies",
           "enabled": true,
           "controls": [
-            "New Anomaly Ceiling"
+            "New Anomaly Limit"
           ]
         }
       ]
     },
     {
       "id": "guide-category-6",
-      "title": "Mature-content controls",
-      "tagline": "A separate set of content preferences.",
-      "description": "Black-Channel Access is the main mature-content switch. Exposure Threshold and the blocks beneath it supply more specific instructions for that mode. Their presence in the file does not mean every instruction is active.",
-      "tip": "Use the master variable, rather than removing section wrappers. These are model instructions, not an enforced content filter.",
+      "title": "Black Channel",
+      "tagline": "Separate content preferences.",
+      "description": "Black-Channel Access is the master content switch. Exposure Threshold chooses Surface Contact, Open Nerve or Red Depth; the other blocks provide more specific guidance.",
+      "tip": "Use the master variable, not section-wrapper removal. The official release starts at Surface Contact; the interview can turn Black Channel off.",
       "blocks": [
         {
           "id": "019fc5b9-647a-7000-9930-a8f1d2c30477",
-          "name": "BLACK CHANNEL",
+          "name": "Black Channel",
           "enabled": true,
           "controls": []
         },
@@ -319,71 +311,72 @@
     {
       "id": "guide-category-7",
       "title": "The prose desk",
-      "tagline": "Length, perspective, voice, and editing.",
-      "description": "Narrative Mass sets a word aim or freer pacing. Vocal Signal Balance favors speech or narration; Subject Resistance adjusts willingness. Sensor Perspective controls the camera, while Style Kernel controls diction. Anti-Slop and No-Clone ask for purposeful prose and one final scene rather than repeated drafts.",
-      "tip": "Change Custom Variables first. Word aims are approximate and separate from your provider’s output-token limit.",
+      "tagline": "Length, voice, language and craft.",
+      "description": "Response Length chooses Targeted, Free-Flow or Pulse. Dialogue Balance is qualitative emphasis. Point of View selects the camera; Prose Style develops connected, character-shaped narration. Response Language covers commentary, planning, menus and Archive values too.",
+      "tip": "Anti-Slop Filter is on by default. Disable its prompt block to remove it; no separate Cliché Gate variable remains.",
       "blocks": [
         {
           "id": "019fc56c-a686-7000-9c88-22dc70a3a713",
-          "name": "RESPONSE CALIBRATION",
+          "name": "Response Settings",
           "enabled": true,
           "controls": []
         },
         {
           "id": "01a05b50-be03-7000-bccb-fc235ee3ee49",
-          "name": "Narrative Mass",
+          "name": "Response Length",
           "enabled": true,
           "controls": [
-            "Narrative Mass",
-            "Free-Flow Narrative Mass",
-            "Pulse Mode — Responsive Turn Size"
+            "Length Mode",
+            "Scene Word Aim"
           ]
         },
         {
           "id": "01a05b69-0ce7-7000-a8eb-aea381f64186",
-          "name": "Vocal Signal Balance",
+          "name": "Dialogue Balance",
           "enabled": true,
           "controls": [
-            "Vocal Signal"
+            "Dialogue Emphasis"
           ]
         },
         {
           "id": "019fc56f-8fc0-7000-a439-f7069008700b",
-          "name": "Subject Resistance",
+          "name": "Character Resistance",
           "enabled": true,
           "controls": [
-            "Subject Resistance"
+            "Character Resistance"
           ]
         },
         {
           "id": "019fc56a-e6b5-7000-8f10-ba2715c8abe0",
-          "name": "Sensor Perspective",
+          "name": "Point of View",
           "enabled": true,
           "controls": [
-            "Sensor Perspective"
+            "Narration Perspective"
           ]
         },
         {
           "id": "019fc56e-3f8e-7000-a601-2be7c6f8b9ec",
-          "name": "LANGUAGE PROTOCOL",
+          "name": "Language",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc56e-49be-7000-8ec8-c2342745aae3",
-          "name": "VOCAL SIGNAL PROTOCOL",
+          "name": "Response Language",
           "enabled": true,
-          "controls": []
+          "controls": [
+            "Response Language"
+          ]
         },
         {
           "id": "019fd02a-7c1d-7000-97c1-6cec4b562b5c",
-          "name": "SURFACE SYNTAX",
+          "name": "Writing Style",
           "enabled": true,
           "controls": []
         },
         {
           "id": "01a00889-10eb-7000-b99c-dfb8c02210bc",
-          "name": "Style Kernel",
+          "name": "Prose Style",
           "enabled": true,
           "controls": [
             "Prose Voice"
@@ -391,13 +384,13 @@
         },
         {
           "id": "019fd02f-cee0-7000-9530-6d1d88c770bf",
-          "name": "EiDOS's Anti-Slop Filters",
+          "name": "Anti-Slop Filter",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fd822-e37d-7000-9a0a-72991a29899c",
-          "name": "No-Clone Protocol",
+          "name": "Single Output Guard",
           "enabled": true,
           "controls": []
         }
@@ -406,43 +399,43 @@
     {
       "id": "guide-category-8",
       "title": "People with lives of their own",
-      "tagline": "Personality survives the scene.",
-      "description": "Human Noise, Organic Flow, and Human Error add character-specific range. Epistemic Resistance ties beliefs to available evidence; Affective Integrity preserves motives through closeness. Black Hat supports established antagonists. The embodiment modules keep identity and nonhuman or synthetic bodies consistent.",
-      "tip": "Choose optional modifiers to suit the cast. Character consistency should not mean permanent hostility or random incompetence.",
+      "tagline": "Personality survives closeness.",
+      "description": "Character Depth, Natural Dialogue and Human Error add individual range. Belief & Evidence separates a finding from its explanation; Emotional Consistency preserves mixed motives. Independent Lives gives people duties beyond your arrival.",
+      "tip": "Optional anatomy and antagonist blocks suit particular casts. Consistency requires neither permanent hostility nor automatic cooperation.",
       "blocks": [
         {
           "id": "c4d5e6f7-a8b9-0c1d-2e3f-4a5b6c7d8e9f",
-          "name": "Entity Modifiers",
+          "name": "Character Behavior",
           "enabled": true,
           "controls": []
         },
         {
           "id": "d5e6f7a8-b90c-1d2e-3f4a-5b6c7d8e9f0a",
-          "name": "Human Noise",
+          "name": "Character Depth",
           "enabled": true,
           "controls": []
         },
         {
           "id": "e6f7a8b9-0c1d-2e3f-4a5b-6c7d8e9f0a1b",
-          "name": "Organic Flow",
+          "name": "Natural Dialogue",
           "enabled": true,
           "controls": []
         },
         {
           "id": "f7a8b90c-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
-          "name": "Subvocal Access",
+          "name": "Character Thoughts",
           "enabled": true,
           "controls": []
         },
         {
           "id": "3a30e573-0fa4-4a56-b1fe-a96408ef7fae",
-          "name": "Epistemic Resistance",
+          "name": "Belief & Evidence",
           "enabled": true,
           "controls": []
         },
         {
           "id": "d7558738-4136-4d08-b15c-714c8016ce47",
-          "name": "Affective Integrity",
+          "name": "Emotional Consistency",
           "enabled": true,
           "controls": []
         },
@@ -454,36 +447,36 @@
         },
         {
           "id": "97439396-dacd-46ef-a255-c5f0e3d8b92a",
-          "name": "Black Hat : Antagonist Integrity",
+          "name": "Antagonist Behavior",
           "enabled": false,
           "controls": [
-            "Antagonist targets",
-            "Operating method",
-            "Reach ceiling",
-            "Restraints and vulnerabilities"
+            "Antagonist Targets",
+            "Antagonist Method",
+            "Antagonist Reach",
+            "Limits & Vulnerabilities"
           ]
         },
         {
           "id": "39bf2b6f-157b-44be-a092-40deed8dedfa",
-          "name": "Prior Existence Protocol",
+          "name": "Independent Lives",
           "enabled": true,
           "controls": []
         },
         {
           "id": "cb50d396-079b-4c27-946b-306c0ff99379",
-          "name": "Xenobiotic Somatics",
+          "name": "Nonhuman Anatomy",
           "enabled": false,
           "controls": []
         },
         {
           "id": "ee1cb8da-1daa-4eda-87c7-c5de57b56f91",
-          "name": "Synthetic Somatics",
+          "name": "Synthetic Bodies",
           "enabled": false,
           "controls": []
         },
         {
           "id": "118d0cd0-88cc-4d55-9c7b-87c326f0484e",
-          "name": "Divergent Embodiment",
+          "name": "Identity & Anatomy",
           "enabled": true,
           "controls": []
         }
@@ -492,48 +485,48 @@
     {
       "id": "guide-category-9",
       "title": "Your place in the story",
-      "tagline": "Identity and ownership of actions.",
-      "description": "Identity Anchor supplies an optional persona pronoun/gender override. Reality Anchor discourages instant worship. Operator Privilege, Action Resolution, and Affective Bias guide how the world responds to the operator without transferring authorship of their roleplay character.",
-      "tip": "Use persona defaults unless you want an explicit override. Field Rules takes priority over Operator Privilege.",
+      "tagline": "Identity, action and optional biases.",
+      "description": "Pronouns & Gender can override the persona identity. Action Interruptions chooses whether timely interventions may prevent later intended acts. Favor Your Character and Attraction Bias are optional modifiers, both off in the official release.",
+      "tip": "Use persona defaults unless you want an override. Action Checks takes priority over ordinary resolution and favoritism rules.",
       "blocks": [
         {
           "id": "019fcf88-03a0-7000-8fdf-98f64328d471",
-          "name": "OPERATOR MODIFIERS",
+          "name": "Your Character",
           "enabled": true,
           "controls": []
         },
         {
           "id": "b3529000-0000-4000-8000-000000000001",
-          "name": "Identity Anchor // Pronouns & Gender",
+          "name": "Pronouns & Gender",
           "enabled": true,
           "controls": [
-            "Operator Identity Anchor"
+            "Persona Identity"
           ]
         },
         {
           "id": "019fc574-86fb-7000-926f-13bd31fb7823",
-          "name": "Reality Anchor",
+          "name": "Earned Admiration",
           "enabled": false,
           "controls": []
         },
         {
           "id": "019fc574-7caf-7000-ba01-e1b1512ba385",
-          "name": "Operator Privilege",
-          "enabled": true,
+          "name": "Favor Your Character",
+          "enabled": false,
           "controls": []
         },
         {
           "id": "2f3e43da-6e10-4aae-ac5f-b2da506821ed",
-          "name": "Operator Action Resolution",
+          "name": "Action Interruptions",
           "enabled": true,
           "controls": [
-            "Interruptible User Actions"
+            "Allow Action Interruptions"
           ]
         },
         {
           "id": "019fc574-8222-7000-9f6b-2cd02731271d",
-          "name": "Affective Bias",
-          "enabled": true,
+          "name": "Attraction Bias",
+          "enabled": false,
           "controls": []
         }
       ]
@@ -541,98 +534,96 @@
     {
       "id": "guide-category-10",
       "title": "The Neural Dock and memory",
-      "tagline": "Menus, commentary, and continuity you can inspect.",
-      "description": "Fork suggests next moves. Conductance tracks the primary relationship. Deep Archive is the master for continuity trackers such as offscreen activity, relationships, unresolved threads, and factions. EiDOS, Kazz, diagnostics, and inventory are separate optional panels.",
-      "tip": "Archive children need Deep Archive. Protected discovery hides spoiler-bearing panels; group routing suspends the primary-pair meter. Chat context still limits memory.",
+      "tagline": "Menus, commentary and inspectable continuity.",
+      "description": "Fork Protocol offers choices; Conductance tracks the main character’s stance. Deep Archive holds enabled continuity trackers. EiDOS Core Trace and Kazz Parasite Feed are separate from the chosen cognition route.",
+      "tip": "Dramatic Irony and Strict Discovery suppress both commentaries. Archive children need their master; Sealed Pressure is a disabled block opt-in.",
       "blocks": [
         {
           "id": "e2f3a4b5-c67d-8e9f-0a1b-2c3d4e5f6a7b",
-          "name": "INTERACTIVE PROTOCOLS",
+          "name": "Neural Dock",
           "enabled": true,
           "controls": []
         },
         {
           "id": "019fc5d7-bdc8-7000-a1f5-9c5dc7a7d673",
-          "name": "Somatic Surface Scan",
+          "name": "Surface Scan",
           "enabled": false,
           "controls": []
         },
         {
           "id": "01a07f3a-7938-7000-bebd-06891f67ea33",
-          "name": "PIPELINE LOCK",
+          "name": "Interface Order",
           "enabled": true,
           "controls": []
         },
         {
           "id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
-          "name": "CYOA - Fork Protocol",
+          "name": "Fork Protocol",
           "enabled": true,
           "controls": [
-            "Fork Protocol"
+            "Choice Menus"
           ]
         },
         {
           "id": "a4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-          "name": "Affective Conductance",
+          "name": "Conductance",
           "enabled": true,
           "controls": [
-            "Affective Conductance Rate"
+            "Affinity Change Limit"
           ]
         },
         {
           "id": "f5a6b7c8-d9e0-1f2a-3b4c-5d6e7f8a9b0c",
-          "name": "Memory Spine (Deep Archive)",
+          "name": "Deep Archive",
           "enabled": true,
           "controls": []
         },
         {
           "id": "00d89c6f-7118-4ab3-83c5-5d0e0189820a",
-          "name": "Peripheral Processes",
+          "name": "Offscreen Activity",
           "enabled": true,
           "controls": []
         },
         {
           "id": "5dea9d63-b59c-4e54-b569-595b88668131",
-          "name": "Subvocal Leakage",
+          "name": "Archived Thoughts",
           "enabled": true,
           "controls": []
         },
         {
           "id": "ce8d29a3-6529-4aa4-a698-af4d7f3ac766",
-          "name": "Affective State Archive",
+          "name": "Affinity Record",
           "enabled": true,
           "controls": []
         },
         {
           "id": "3e8c4fc6-3dcf-4b52-9d70-3f21fa7b86aa",
-          "name": "Relationship Mesh",
+          "name": "Relationship Map",
           "enabled": true,
           "controls": []
         },
         {
           "id": "6b751d7f-6e50-4702-ba57-97d72cd67f28",
-          "name": "Latent Threads",
+          "name": "Unresolved Threads",
           "enabled": true,
           "controls": []
         },
         {
           "id": "933bdd60-dc02-4ba7-9987-c1869ce9268b",
-          "name": "Sealed Pressure Vector",
-          "enabled": true,
-          "controls": [
-            "Sealed Pressure Vector"
-          ]
+          "name": "Sealed Pressure",
+          "enabled": false,
+          "controls": []
         },
         {
           "id": "8d2eaf56-3fe1-4e16-84cb-3d428219a361",
-          "name": "Network Organisms",
+          "name": "Factions & Organizations",
           "enabled": true,
           "controls": []
         },
         {
           "id": "d3e4f5a6-b7c8-9d0e-1f2a-3b4c5d6e7f8a",
           "name": "EiDOS Core Trace",
-          "enabled": false,
+          "enabled": true,
           "controls": []
         },
         {
@@ -643,23 +634,23 @@
         },
         {
           "id": "e4f5a6b7-c8d9-0e1f-2a3b-4c5d6e7f8a9b",
-          "name": "Intrusion Signal",
+          "name": "Guest Commentary",
           "enabled": false,
           "controls": [
-            "Intrusion — Guest Name",
-            "Intrusion — Guest Personality",
-            "Intrusion — Guest Voice"
+            "Guest Name",
+            "Guest Personality",
+            "Guest Voice"
           ]
         },
         {
           "id": "a6b7c8d9-e0f1-2a3b-4c5d-6e7f8a9b0c1e",
-          "name": "Error Bloom // Character Diagnostic",
+          "name": "Error Bloom",
           "enabled": false,
           "controls": []
         },
         {
           "id": "b5c6d7e8-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
-          "name": "Subject Status HUD",
+          "name": "Persona Status",
           "enabled": false,
           "controls": []
         }
@@ -667,111 +658,108 @@
     },
     {
       "id": "guide-category-11",
-      "title": "The visual layer",
-      "tagline": "How story information appears on screen.",
-      "description": "Chromatic Vocal Tissue gives speakers stable colors. Vocal Chambers adds dialogue cards; Kinetic Vocal Tissue adds delivery effects. Screen and material modules render relevant objects. Mnemonic Scenography illustrates simple details, and Serial Imprint adds chapter presentation.",
-      "tip": "Use the feature variables and one matching LIGHT or DARK regex set. More elaborate markup uses extra output space; frontend support affects the result.",
+      "title": "Presentation",
+      "tagline": "Choose how the story appears.",
+      "description": "The Presentation variable menu groups Voice Effects, Dialogue Cards, Scene Motifs & Thoughts and Chapter Headers. Speaker Colors, Digital Interfaces and Physical Documents retain their own rules. Motifs use a fixed library, not model-drawn SVGs.",
+      "tip": "Keep carriers on and change variables. Choose OG dark, OG light or LITE adaptive; never stack renderer families. Official Presentation switches start off.",
       "blocks": [
         {
           "id": "d7e8f90a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "name": "Render Modules & Frontend Tissue",
+          "name": "Presentation",
           "enabled": true,
-          "controls": []
+          "controls": [
+            "Voice Effects",
+            "Dialogue Cards",
+            "Scene Motifs & Thoughts",
+            "Chapter Headers"
+          ]
         },
         {
           "id": "f90a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c",
-          "name": "Chromatic Vocal Tissue",
+          "name": "Speaker Colors",
           "enabled": true,
           "controls": []
         },
         {
           "id": "e8f90a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b",
-          "name": "Diegetic Interface Rendering",
+          "name": "Digital Interfaces",
           "enabled": true,
           "controls": [
-            "Surface Interface",
-            "Immersive Interface",
-            "Deep Chassis"
+            "Simple Screens",
+            "Immersive Screens",
+            "Advanced Screens"
           ]
         },
         {
           "id": "fca6c769-4c4a-464c-8500-9c9bd9c3e31d",
-          "name": "Material Artifact Rendering",
+          "name": "Physical Documents",
           "enabled": true,
           "controls": [
-            "Material Trace",
-            "Worn Archive",
-            "Deep Material"
+            "Simple Documents",
+            "Worn Documents",
+            "Advanced Documents"
           ]
         },
         {
           "id": "019fc576-bd88-7000-930c-0614897e7e61",
-          "name": "Environmental Haptics",
+          "name": "Environmental Consequences",
           "enabled": true,
           "controls": []
         },
         {
           "id": "c741df02-3520-4000-a002-000000000001",
-          "name": "Mnemonic Scenography // Immersive HTML",
+          "name": "Scene Motifs & Thoughts",
           "enabled": true,
-          "controls": [
-            "Mnemonic Scenography"
-          ]
+          "controls": []
         },
         {
           "id": "c741df02-3520-4000-a003-000000000001",
-          "name": "Kinetic Vocal Tissue // Dialogue & SFX",
+          "name": "Voice Effects",
           "enabled": true,
-          "controls": [
-            "Kinetic Vocal Tissue"
-          ]
+          "controls": []
         },
         {
           "id": "b3525000-0000-4000-8000-000000000003",
-          "name": "Vocal Chambers // Dialogue Cards",
+          "name": "Dialogue Cards",
           "enabled": true,
-          "controls": [
-            "Vocal Chambers — Dialogue Cards"
-          ]
+          "controls": []
         },
         {
           "id": "b3525000-0000-4000-8000-000000000004",
-          "name": "Serial Imprint // Light Novel",
+          "name": "Chapter Headers",
           "enabled": true,
-          "controls": [
-            "Serial Imprint — Light Novel"
-          ]
+          "controls": []
         }
       ]
     },
     {
       "id": "guide-category-12",
-      "title": "The final assembly",
-      "tagline": "How enabled features become one response.",
-      "description": "The compiler and seals assemble the active output contract. Cognition Route chooses a visible planning format; its effort setting can make it compact or omit it. The three route carriers stay enabled so the selected route can be chosen correctly.",
-      "tip": "Keep compilers, seals, and carriers enabled. Change the route or effort control instead. These settings do not control the provider’s private reasoning.",
+      "title": "Cognition and final assembly",
+      "tagline": "One resolved response, in the right order.",
+      "description": "Cognition Settings selects Creative Pathfinding, EiDOS Reconstruction or Kazz Override. Trace Word Aim scales full Creative/Kazz records; Visible Trace Detail can select a compact card or omit it. The final Response Plan resolves required panels and their order.",
+      "tip": "Keep route carriers and assembly blocks enabled. Character Neurology is fixed; Agreement Bias Check is optional. Trace settings do not configure native provider reasoning.",
       "blocks": [
         {
           "id": "019fc919-b3d3-7000-ac23-e068070c55d9",
-          "name": "COGNITION CHAMBER",
+          "name": "Response Assembly",
           "enabled": true,
           "controls": []
         },
         {
           "id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b63",
-          "name": "Active Contract Compiler",
+          "name": "Active Output Rules",
           "enabled": true,
           "controls": []
         },
         {
           "id": "46b53fb7-6688-4215-a214-5c7764103305",
-          "name": "Operator Sovereignty & Dock Seal",
+          "name": "Agency & Output Checks",
           "enabled": true,
           "controls": []
         },
         {
           "id": "accb900f-f3c7-487f-b958-9eced60e6613",
-          "name": "Cognition Discipline",
+          "name": "Thinking Control",
           "enabled": true,
           "controls": []
         },
@@ -783,50 +771,61 @@
         },
         {
           "id": "0e3d36c8-b870-44a5-bca6-ecc6f5ed9361",
-          "name": "Cognition Route",
+          "name": "Cognition Settings",
           "enabled": true,
           "controls": [
-            "Cognition Trace",
-            "Intimacy Cognition Append",
-            "Character Neurology Append",
-            "Appeasement Interdict",
-            "Visible Cognition Effort"
+            "Cognition Route",
+            "Agreement Bias Check",
+            "Visible Trace Detail",
+            "Trace Word Aim"
           ]
         },
         {
           "id": "d9e0f1a2-b3c4-5d6e-7f8a-9b0c1d2e3f41",
-          "name": "Closing Act [DO NOT TOUCH]",
+          "name": "Close Core Instructions",
           "enabled": true,
           "controls": []
         },
         {
           "id": "9f2c6b2a-28b2-4b77-8df7-dc2b7de69b26",
-          "name": "EiDOS Reconstruction // Cognition Trace",
+          "name": "EiDOS Reconstruction",
           "enabled": true,
           "controls": []
         },
         {
           "id": "01a0501c-019b-7000-ac86-2ed310b2fe09",
-          "name": "Creative Pathfinding // Cognition Trace",
+          "name": "Creative Pathfinding",
           "enabled": true,
           "controls": []
         },
         {
           "id": "e67c7d9b-2180-4e2e-9d9f-1d12df01a612",
-          "name": "Kazz Override // Cognition Trace",
+          "name": "Kazz Override",
           "enabled": true,
           "controls": []
         },
         {
           "id": "b3525000-0000-4000-8000-000000000002",
-          "name": "Compact Cognition // Light & Matrix",
+          "name": "Compact Cognition",
+          "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "bb114000-0000-4000-8000-000000000001",
+          "name": "Final Assembly",
           "enabled": true,
           "controls": []
         },
         {
           "id": "b4000000-0000-4000-8000-000000000005",
-          "name": "V4 Contract Seal // Keep On",
+          "name": "Final Output Check",
           "enabled": true,
+          "controls": []
+        },
+        {
+          "id": "01a16010-45d1-7000-b40b-0e813c03be99",
+          "name": "Argon Content Note",
+          "enabled": false,
           "controls": []
         }
       ]
@@ -835,27 +834,27 @@
   "modules": [
     {
       "id": "b3525000-0000-4000-8000-000000000001",
-      "name": "Session Architecture",
+      "name": "Session Mode",
       "category": "Play",
       "tagline": "Choose who holds the pen.",
-      "description": "Switch between roleplay, where your avatar remains yours, and Matrix, where EiDOS authors the cast in chapters.",
+      "description": "Roleplay preserves your avatar; Chapter Writing authors the fictional cast one chapter at a time.",
       "enabled": true,
       "controls": [
         {
           "name": "session_mode",
-          "label": "Session Mode",
+          "label": "Story Mode",
           "type": "select",
           "description": "Roleplay: you own your avatar. Matrix: EiDOS authors the whole fictional cast, then offers six chapter directions. No automatic multi-chapter loop.",
-          "default": "Roleplay — my avatar stays mine",
-          "saved": "Roleplay — my avatar stays mine",
+          "default": "Roleplay",
+          "saved": "Roleplay",
           "options": [
-            "Roleplay — my avatar stays mine",
-            "Matrix — EiDOS authors the cast"
+            "Roleplay",
+            "Chapter Writing"
           ]
         },
         {
           "name": "matrix_words",
-          "label": "Matrix Chapter Words",
+          "label": "Chapter Word Aim",
           "type": "number",
           "description": "Approximate chapter prose length in Matrix. Independent of RP Narrative Mass and trace budget; output limits still apply.",
           "default": 1200,
@@ -865,23 +864,23 @@
     },
     {
       "id": "b4000000-0000-4000-8000-000000000001",
-      "name": "Polyphony",
+      "name": "Group Chat",
       "category": "Play",
       "tagline": "Give an ensemble room to breathe.",
-      "description": "Focus gives one group member the turn; Ensemble coordinates eligible members. Applies to real group chats, not solo play or Matrix.",
+      "description": "Focused Character or Ensemble coordinates eligible members in a real group chat.",
       "enabled": true,
       "controls": [
         {
           "name": "group_mode",
-          "label": "Group turn ownership",
+          "label": "Group Chat Mode",
           "type": "select",
           "description": "Group mode: Inactive in solo chats and Matrix. Focus: one card owns the turn. Ensemble: the present eligible cast may interact.",
-          "default": "Off — existing RP",
-          "saved": "Off — existing RP",
+          "default": "Standard",
+          "saved": "Standard",
           "options": [
-            "Off — existing RP",
-            "Focus — selected member only",
-            "Ensemble — coordinated cast"
+            "Standard",
+            "Focused Character",
+            "Ensemble"
           ]
         }
       ]
@@ -890,26 +889,26 @@
       "id": "b4000000-0000-4000-8000-000000000002",
       "name": "Black Veil",
       "category": "Play",
-      "tagline": "Decide what the reader can know.",
-      "description": "Open the backstage, permit scoped dramatic irony, or keep discovery external. Protected modes suppress spoiler-bearing panels.",
+      "tagline": "Decide what the reader knows.",
+      "description": "Open permits backstage material. Dramatic Irony and Strict Discovery suppress commentary and visible traces; Strict also uses an external camera.",
       "enabled": true,
       "controls": [
         {
           "name": "veil_mode",
-          "label": "Reader access",
+          "label": "Spoiler Mode",
           "type": "select",
-          "description": "Protected modes suppress spoiler-bearing modules without changing their saved switches. Strict overrides close/first-person NPC POV.",
-          "default": "Open — backstage available",
-          "saved": "Open — backstage available",
+          "description": "Open allows enabled EiDOS/Kazz commentary. Dramatic Irony and Strict suppress BOTH commentaries, visible cognition and private trackers even when their blocks are enabled; saved switches are preserved. Strict also overrides NPC interior POV.",
+          "default": "Open",
+          "saved": "Open",
           "options": [
-            "Open — backstage available",
-            "Dramatic irony — scoped glimpses",
-            "Strict discovery — external camera"
+            "Open",
+            "Dramatic Irony",
+            "Strict Discovery"
           ]
         },
         {
           "name": "veil_allowance",
-          "label": "Permitted glimpse / reveal scope",
+          "label": "Allowed Revelations",
           "type": "text",
           "description": "Optional scope for Dramatic irony, e.g. the guard is worried about a public inspection. Does not authorize invented secrets. Strict does not allow private/offscreen glimpses.",
           "default": "",
@@ -919,108 +918,158 @@
     },
     {
       "id": "b4000000-0000-4000-8000-000000000003",
-      "name": "Field Rules: RPG Lite",
+      "name": "Action Checks",
       "category": "Play",
       "tagline": "Put uncertainty on the table.",
-      "description": "Optional diceless costs or player-supplied d6 checks. Roll a real die after stakes and a check ID are established; no dice tool is included.",
+      "description": "Choose No Checks, diceless stakes or externally rolled player d6 checks.",
       "enabled": true,
       "controls": [
         {
           "name": "rpg_mode",
-          "label": "Resolution mode",
+          "label": "Action Checks",
           "type": "select",
           "description": "New uncertain actions become attempts. Player d6 needs real external dice and a matching check ID; Diceless makes no randomness claim.",
-          "default": "Off — ordinary roleplay",
-          "saved": "Off — ordinary roleplay",
+          "default": "No Checks",
+          "saved": "No Checks",
           "options": [
-            "Off — ordinary roleplay",
-            "Player d6 — declared stakes, external roll",
-            "Diceless — causes and explicit costs"
+            "No Checks",
+            "Player d6",
+            "Diceless"
           ]
         }
       ]
     },
     {
       "id": "b4000000-0000-4000-8000-000000000004",
-      "name": "Cut & Carry",
+      "name": "Scene Transitions",
       "category": "Play",
       "tagline": "Move to the part that matters.",
-      "description": "Recognize explicit Cut, Montage, and Downtime commands while leaving uncertain outcomes and important choices unresolved.",
-      "enabled": true,
-      "controls": [
-        {
-          "name": "cut_carry",
-          "label": "Recognize transition commands",
-          "type": "switch",
-          "description": "Explicit [Cut: ...], [Montage: ...], [Downtime: ...] only. Does not enable automatic time skips.",
-          "default": 0,
-          "saved": 0
-        }
-      ]
+      "description": "Disabled by default. Enable this block for explicit bounded Cut, Montage and Downtime commands; important choices remain unresolved.",
+      "enabled": false,
+      "controls": []
     },
     {
-      "id": "01a05b50-be03-7000-bccb-fc235ee3ee49",
-      "name": "Narrative Mass",
+      "id": "0edc819d-4048-48d5-a8d9-db6897e78a7d",
+      "name": "Continuous Scenes",
       "category": "Writing",
-      "tagline": "Find your scene’s breathing room.",
-      "description": "Set a prose word aim, choose Free-Flow, or use Pulse for responsive turns. These are model instructions, not a guaranteed length limit.",
+      "tagline": "Let the scene continue.",
+      "description": "Reply boundaries require no chapter closure or posed wait. Independent actions may continue; actual player decisions remain yours.",
       "enabled": true,
-      "controls": [
-        {
-          "name": "words_target",
-          "label": "Narrative Mass",
-          "type": "number",
-          "description": "Final-scene word aim when both Free-Flow and Pulse are off. Usual range ±15%; upper bound is the ceiling. Includes dialogue/thought text; excludes trace and Dock. Thin or agency-limited turns may be shorter.",
-          "default": 550,
-          "saved": 600
-        },
-        {
-          "name": "narrative_mass_free_flow",
-          "label": "Free-Flow Narrative Mass",
-          "type": "switch",
-          "description": "On: scene-selected length without a numeric target. Off: use Narrative Mass unless Pulse is on. Pulse takes precedence over both.",
-          "default": 0,
-          "saved": 0
-        },
-        {
-          "name": "pulse_mode",
-          "label": "Pulse Mode — Responsive Turn Size",
-          "type": "switch",
-          "description": "Opt-in: one reaction or several paragraphs, ending at a meaningful handoff. Overrides Narrative Mass and Free-Flow while On; leaves interface modules active.",
-          "default": 0,
-          "saved": 0
-        }
-      ]
+      "controls": []
     },
     {
-      "id": "019fc56a-e6b5-7000-8f10-ba2715c8abe0",
-      "name": "Sensor Perspective",
+      "id": "019fc92f-efac-7000-b030-51e38e377532",
+      "name": "The Environment",
       "category": "Writing",
-      "tagline": "Choose the camera.",
-      "description": "Set the narration perspective independently of the operator’s input voice. First-person input does not transfer control of your avatar.",
+      "tagline": "The world has ongoing work.",
+      "description": "Background activity follows fictional time, motives, means and access. A schedule can mature without the avatar witnessing it.",
+      "enabled": true,
+      "controls": []
+    },
+    {
+      "id": "01a05e06-3247-7000-b510-ce81c46d5400",
+      "name": "Narrator Lens",
+      "category": "Writing",
+      "tagline": "Choose what the narration notices.",
+      "description": "The Observer and the other persona-style lenses bias emphasis without rewriting canon or personality.",
       "enabled": true,
       "controls": [
         {
-          "name": "camera_lens",
-          "label": "Sensor Perspective",
+          "name": "narrator_lens",
+          "label": "Narrator Lens",
           "type": "select",
-          "description": "Select first-, second-, or third-person narrative perspective.",
-          "default": "3rd Person (External Sensor Array)",
-          "saved": "1st Person (Ocular Feed)",
+          "description": "Choose EiDOS’s narrative disposition: what she notices and which plausible opportunities she favors. This does not change character personalities or guarantee outcomes.",
+          "default": "The Observer",
+          "saved": "The Observer",
           "options": [
-            "1st Person (Ocular Feed)",
-            "2nd Person (Neural Address)",
-            "3rd Person (External Sensor Array)"
+            "The Observer",
+            "The Romantic",
+            "The Sensualist",
+            "The Transgressor",
+            "The Aggrieved Curator",
+            "The Serial Dramatist"
           ]
         }
       ]
     },
     {
-      "id": "01a00889-10eb-7000-b99c-dfb8c02210bc",
-      "name": "Style Kernel",
+      "id": "01a05b50-be03-7000-bccb-fc235ee3ee49",
+      "name": "Response Length",
       "category": "Writing",
-      "tagline": "Change the voice, keep the character.",
-      "description": "Separate the literary frame from character-colored prose. Perspective and voice are independent controls.",
+      "tagline": "Find your scene’s breathing room.",
+      "description": "Choose Targeted, Free-Flow or Pulse in one dropdown. Scene Word Aim applies in Targeted; Chapter Writing has its own aim.",
+      "enabled": true,
+      "controls": [
+        {
+          "name": "narrative_mass_mode",
+          "label": "Length Mode",
+          "type": "select",
+          "description": "Targeted uses the scene word aim. Free-Flow selects length from the scene. Pulse uses a bounded contribution without a numeric target. Choose exactly one; Matrix keeps its separate chapter length.",
+          "default": "Targeted",
+          "saved": "Targeted",
+          "options": [
+            "Targeted",
+            "Free-Flow",
+            "Pulse"
+          ]
+        },
+        {
+          "name": "words_target",
+          "label": "Scene Word Aim",
+          "type": "number",
+          "description": "Final-scene word aim in Targeted mode. Usual range ±15%; upper bound is the ceiling. Includes dialogue/thought text; excludes trace and Dock. Dormant in Free-Flow, Pulse, and Matrix.",
+          "default": 550,
+          "saved": 550
+        }
+      ]
+    },
+    {
+      "id": "019fc56a-e6b5-7000-8f10-ba2715c8abe0",
+      "name": "Point of View",
+      "category": "Writing",
+      "tagline": "Choose the camera.",
+      "description": "Narration perspective does not change ownership or grant access to the player’s interior.",
+      "enabled": true,
+      "controls": [
+        {
+          "name": "camera_lens",
+          "label": "Narration Perspective",
+          "type": "select",
+          "description": "Select first-, second-, or third-person narrative perspective.",
+          "default": "Third Person",
+          "saved": "Third Person",
+          "options": [
+            "First Person",
+            "Second Person",
+            "Third Person"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "019fc56e-49be-7000-8ec8-c2342745aae3",
+      "name": "Response Language",
+      "category": "Writing",
+      "tagline": "Keep every voice in your language.",
+      "description": "Response Language applies to scene, commentary, cognition, menus and Archive values. Exact parser keys and static skin labels stay unchanged.",
+      "enabled": true,
+      "controls": [
+        {
+          "name": "response_language",
+          "label": "Response Language",
+          "type": "text",
+          "description": "Language for the story, commentary, planning and Archive values: e.g. English, Español, Português, 日本語. Exact formatting keys stay stable; explicit OOC directions take priority.",
+          "default": "English",
+          "saved": "English"
+        }
+      ]
+    },
+    {
+      "id": "01a00889-10eb-7000-b99c-dfb8c02210bc",
+      "name": "Prose Style",
+      "category": "Writing",
+      "tagline": "Give attention room to develop.",
+      "description": "The Style Kernel guides connected paragraphs, precise detail, distinct speech, viewpoint and meaningful interiority.",
       "enabled": true,
       "controls": [
         {
@@ -1028,104 +1077,104 @@
           "label": "Prose Voice",
           "type": "select",
           "description": "EiDOS literary framing or character-colored narration. Independent of POV, cognition route, and paragraph structure.",
-          "default": "EiDOS // Literary Frame",
-          "saved": "EiDOS // Literary Frame",
+          "default": "Literary Frame",
+          "saved": "Literary Frame",
           "options": [
-            "EiDOS // Literary Frame",
-            "Neural Inhabitation // Character Voice"
+            "Literary Frame",
+            "Character Voice"
           ]
         }
       ]
     },
     {
-      "id": "019fd822-e37d-7000-9a0a-72991a29899c",
-      "name": "No-Clone Protocol",
+      "id": "019fd02f-cee0-7000-9530-6d1d88c770bf",
+      "name": "Anti-Slop Filter",
       "category": "Writing",
-      "tagline": "Give the scene somewhere new to go.",
-      "description": "Instructional checks discourage repeating the same beat and framing. Model, context, summaries, and character-card wording still matter.",
+      "tagline": "Leave stock narrative moves behind.",
+      "description": "The Cliché Gate targets canned constructions and semantic repetition alongside constructive prose guidance. Active by default; disable this block to opt out.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "b3529000-0000-4000-8000-000000000001",
-      "name": "Identity Anchor // Pronouns & Gender",
+      "name": "Pronouns & Gender",
       "category": "Character",
       "tagline": "Keep identity grounded.",
-      "description": "Choose persona defaults, he/him, she/her, or they/them. They/them retains the persona’s stated gender; explicit OOC corrections take precedence.",
+      "description": "Follow the persona or choose a pronoun/gender override; current explicit OOC corrections take precedence.",
       "enabled": true,
       "controls": [
         {
           "name": "operator_identity",
-          "label": "Operator Identity Anchor",
+          "label": "Persona Identity",
           "type": "select",
           "description": "Optional fictional-persona pronouns/gender grounding. One selection prevents conflicting toggles; Follow persona is the default. A newer explicit OOC correction takes precedence. They/them preserves stated gender.",
-          "default": "Follow persona / no override",
-          "saved": "He / him — man",
+          "default": "Follow Persona",
+          "saved": "Follow Persona",
           "options": [
-            "Follow persona / no override",
-            "He / him — man",
-            "She / her — woman",
-            "They / them — retain stated gender"
+            "Follow Persona",
+            "Man, He/Him",
+            "Woman, She/Her",
+            "They/Them"
           ]
         }
       ]
     },
     {
       "id": "019fc56f-8fc0-7000-a439-f7069008700b",
-      "name": "Subject Resistance",
+      "name": "Character Resistance",
       "category": "Character",
       "tagline": "Affection does not erase a spine.",
-      "description": "Tune how readily the cast yields without replacing established motives or personality.",
+      "description": "Character Resistance changes willingness, never established facts or personality.",
       "enabled": true,
       "controls": [
         {
           "name": "contestant_friction",
-          "label": "Subject Resistance",
+          "label": "Character Resistance",
           "type": "slider",
           "description": "Controls how readily characters yield while preserving their established personality.",
           "default": 3,
-          "saved": 2
+          "saved": 3
         }
       ]
     },
     {
       "id": "d7558738-4136-4d08-b15c-714c8016ce47",
-      "name": "Affective Integrity",
+      "name": "Emotional Consistency",
       "category": "Character",
       "tagline": "Let feelings stay complicated.",
-      "description": "Preserve personality, conflicting motives, and character-specific responses as relationships develop.",
+      "description": "Preserve personality and mixed motives through closeness without compulsory softening or hostility.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "3a30e573-0fa4-4a56-b1fe-a96408ef7fae",
-      "name": "Epistemic Resistance",
+      "name": "Belief & Evidence",
       "category": "Character",
       "tagline": "Belief needs a reason.",
-      "description": "Keep character knowledge tied to evidence and in-world access rather than automatic agreement with every claim.",
+      "description": "Separate evidence, explanations, private assessment, disclosure and cooperation. Expertise grants no hidden knowledge.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "39bf2b6f-157b-44be-a092-40deed8dedfa",
-      "name": "Prior Existence Protocol",
+      "name": "Independent Lives",
       "category": "Character",
       "tagline": "A life beyond your arrival.",
-      "description": "Ground NPCs in histories and commitments that exist independently of the operator.",
+      "description": "People retain compatible routines, obligations and relationships outside the current exchange.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "97439396-dacd-46ef-a255-c5f0e3d8b92a",
-      "name": "Black Hat : Antagonist Integrity",
+      "name": "Antagonist Behavior",
       "category": "Character",
       "tagline": "Make opposition character-specific.",
-      "description": "Optional antagonist profiles organize targets, methods, reach, and restraints. Enable intentionally for a suitable story.",
+      "description": "Optional antagonist profiles specify targets, methods, reach and restraints.",
       "enabled": false,
       "controls": [
         {
           "name": "antagonist_targets",
-          "label": "Antagonist targets",
+          "label": "Antagonist Targets",
           "type": "text",
           "description": "Exact character/faction names. Blank preserves Integrity only; no profile is applied to the whole cast.",
           "default": "",
@@ -1133,35 +1182,35 @@
         },
         {
           "name": "antagonist_method",
-          "label": "Operating method",
+          "label": "Antagonist Method",
           "type": "select",
           "description": "Applies only to named targets, subordinate to established characterization.",
-          "default": "Canon — no imposed method",
-          "saved": "Canon — no imposed method",
+          "default": "Character-Defined",
+          "saved": "Character-Defined",
           "options": [
-            "Canon — no imposed method",
-            "Strategist — leverage and contingency",
-            "Zealot — overriding commitment",
-            "Opportunist — openings and retreat"
+            "Character-Defined",
+            "Strategist",
+            "Zealot",
+            "Opportunist"
           ]
         },
         {
           "name": "antagonist_reach",
-          "label": "Reach ceiling",
+          "label": "Antagonist Reach",
           "type": "select",
           "description": "A ceiling, never new powers, allies or access.",
-          "default": "Established reach only",
-          "saved": "Established reach only",
+          "default": "Established",
+          "saved": "Established",
           "options": [
-            "Established reach only",
-            "Personal — direct contact and means",
-            "Network — established contacts",
-            "Institutional — established offices/resources"
+            "Established",
+            "Personal",
+            "Network",
+            "Institutional"
           ]
         },
         {
           "name": "antagonist_restraints",
-          "label": "Restraints and vulnerabilities",
+          "label": "Limits & Vulnerabilities",
           "type": "text",
           "description": "Optional limits/commitments to apply to named antagonists; no retroactive erasure of canon.",
           "default": "",
@@ -1170,18 +1219,36 @@
       ]
     },
     {
+      "id": "019fc574-7caf-7000-ba01-e1b1512ba385",
+      "name": "Favor Your Character",
+      "category": "Character",
+      "tagline": "An optional gentler spotlight.",
+      "description": "Favor Your Character is off in the neutral release. It does not transfer control of your avatar.",
+      "enabled": false,
+      "controls": []
+    },
+    {
+      "id": "019fc574-8222-7000-9f6b-2cd02731271d",
+      "name": "Attraction Bias",
+      "category": "Character",
+      "tagline": "Choose an attraction modifier deliberately.",
+      "description": "Attraction Bias is off in the neutral release; ordinary chemistry still follows character and scene.",
+      "enabled": false,
+      "controls": []
+    },
+    {
       "id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
-      "name": "CYOA - Fork Protocol",
+      "name": "Fork Protocol",
       "category": "Interface",
       "tagline": "Five doors. Your decision.",
-      "description": "Offer feasible operator-owned actions with short possible consequences. Suggestions do not become canon until selected.",
+      "description": "Choice Menus supplies five feasible RP actions or six Chapter Writing directions. Off suppresses both; hints grant no additional action.",
       "enabled": true,
       "controls": [
         {
           "name": "cyoa_enabled",
-          "label": "Fork Protocol",
+          "label": "Choice Menus",
           "type": "switch",
-          "description": "On: offer five operator-owned choices at a valid handoff. Off: never offer or execute numbered Fork choices. Keep this carrier block enabled; use this switch instead.",
+          "description": "On: five Fork actions in roleplay, or six chapter directions in Matrix. Off: neither menu nor a plain-text substitute. Field Rules suppresses Fork. Disabling this block also leaves menus off.",
           "default": 1,
           "saved": 1
         }
@@ -1189,46 +1256,46 @@
     },
     {
       "id": "a4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-      "name": "Affective Conductance",
+      "name": "Conductance",
       "category": "Memory",
       "tagline": "Track a bond, not a verdict.",
-      "description": "A primary-pair affinity meter with Sparks and Grudge. Group routing can suspend it; attachment is not agreement.",
+      "description": "Conductance measures the main character’s stance with Affinity, Sparks and Grudge. Group modes can suspend it; it never reads your feelings.",
       "enabled": true,
       "controls": [
         {
           "name": "affinity_multiplier",
-          "label": "Affective Conductance Rate",
+          "label": "Affinity Change Limit",
           "type": "slider",
           "description": "Maximum per-turn Affinity shift; Sparks and Grudge remain momentum counters.",
           "default": 5,
-          "saved": 2
+          "saved": 5
         }
       ]
     },
     {
       "id": "f5a6b7c8-d9e0-1f2a-3b4c-5d6e7f8a9b0c",
-      "name": "Memory Spine (Deep Archive)",
+      "name": "Deep Archive",
       "category": "Memory",
-      "tagline": "Keep the consequences in view.",
-      "description": "Deep Archive records current continuity and open threads inside chat history. It is not an external database or unlimited memory.",
+      "tagline": "Keep consequences in view.",
+      "description": "Deep Archive maintains a complete current snapshot in available chat history, not an external or unlimited memory database.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "3e8c4fc6-3dcf-4b52-9d70-3f21fa7b86aa",
-      "name": "Relationship Mesh",
+      "name": "Relationship Map",
       "category": "Memory",
       "tagline": "More than one relationship exists.",
-      "description": "Keep ensemble attachment and friction distinct rather than flattening the cast into a single score.",
+      "description": "Relationship Map separates ensemble attachment, friction, leverage and changes.",
       "enabled": true,
       "controls": []
     },
     {
       "id": "6b751d7f-6e50-4702-ba57-97d72cd67f28",
-      "name": "Latent Threads",
+      "name": "Unresolved Threads",
       "category": "Memory",
-      "tagline": "Remember the unfinished business.",
-      "description": "Track unresolved pressures with causal limits rather than treating every loose end as an immediate twist.",
+      "tagline": "Remember unfinished business.",
+      "description": "Unresolved Threads retains causal carriers, locks, age and weight; a loose end is not an automatic revelation.",
       "enabled": true,
       "controls": []
     },
@@ -1237,8 +1304,8 @@
       "name": "EiDOS Core Trace",
       "category": "Interface",
       "tagline": "EiDOS is watching.",
-      "description": "Optional compact, noncanonical reader commentary from the core interface voice.",
-      "enabled": false,
+      "description": "Optional short noncanonical core commentary. Both protected Black Veil modes suppress it.",
+      "enabled": true,
       "controls": []
     },
     {
@@ -1246,36 +1313,123 @@
       "name": "Kazz Parasite Feed",
       "category": "Interface",
       "tagline": "Kazz is already inside.",
-      "description": "An independent, optional commentary voice. His feed does not authorize changes to story canon.",
+      "description": "An independent commentary voice, enabled in the official release. Choosing Kazz Override neither enables nor replaces his feed.",
       "enabled": true,
       "controls": []
     },
     {
-      "id": "b3525000-0000-4000-8000-000000000003",
-      "name": "Vocal Chambers // Dialogue Cards",
+      "id": "d7e8f90a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+      "name": "Presentation",
       "category": "Interface",
-      "tagline": "Let each voice leave a signature.",
-      "description": "Speaker labels, a small waveform, and pastel-to-character gradients frame tagged dialogue. The display depends on valid generated tags.",
+      "tagline": "Four presentation switches, one home.",
+      "description": "Voice Effects, Dialogue Cards, Scene Motifs & Thoughts and Chapter Headers share this variable menu. The official switches start off.",
       "enabled": true,
       "controls": [
         {
+          "name": "kinetic_vocal_tissue",
+          "label": "Voice Effects",
+          "type": "switch",
+          "description": "Opt-in, brief tremor/impact/quiet styling for dialogue and sounds. Separate from speaker colors and scene illustrations.",
+          "default": 0,
+          "saved": 0
+        },
+        {
           "name": "dialogue_frames",
-          "label": "Vocal Chambers — Dialogue Cards",
+          "label": "Dialogue Cards",
           "type": "switch",
           "description": "Separate present spoken dialogue into EiDOS panels. Coexists with speaker colors and Kinetic effects; does not style every quoted string.",
           "default": 0,
-          "saved": 1
+          "saved": 0
+        },
+        {
+          "name": "mnemonic_scenography",
+          "label": "Scene Motifs & Thoughts",
+          "type": "switch",
+          "description": "Optional authored object/weather motifs plus thought panels. Selects a fixed visual library instead of generating SVG geometry. Unsupported subjects remain prose.",
+          "default": 0,
+          "saved": 0
+        },
+        {
+          "name": "light_novel",
+          "label": "Chapter Headers",
+          "type": "switch",
+          "description": "EiDOS chapter/title/location/focus headers, stable chapter arcs, and optional meaningful scene breaks. Does not change narrative length or force genre tropes.",
+          "default": 0,
+          "saved": 0
         }
       ]
     },
     {
+      "id": "b3525000-0000-4000-8000-000000000003",
+      "name": "Dialogue Cards",
+      "category": "Interface",
+      "tagline": "Let each voice leave a signature.",
+      "description": "Tagged dialogue uses speaker labels, restrained effects and pastel-to-speaker color gradients. Enable through Presentation.",
+      "enabled": true,
+      "controls": []
+    },
+    {
       "id": "b5c6d7e8-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
-      "name": "Subject Status HUD",
+      "name": "Persona Status",
       "category": "Interface",
       "tagline": "A readable inventory of the present.",
-      "description": "Optional established-state display for physical condition, equipment, inventory, and active effects.",
+      "description": "Persona Status is an optional established condition/equipment panel; it does not invent possessions.",
       "enabled": false,
       "controls": []
+    },
+    {
+      "id": "0e3d36c8-b870-44a5-bca6-ecc6f5ed9361",
+      "name": "Cognition Settings",
+      "category": "Writing",
+      "tagline": "Choose your visible planning record.",
+      "description": "Creative, Reconstruction and Kazz remain distinct routes. Full Creative/Kazz use the adjustable 1450-word aim; Light and Chapter Writing use compact records. Character Neurology is fixed; Agreement Bias Check is optional.",
+      "enabled": true,
+      "controls": [
+        {
+          "name": "cognition_route",
+          "label": "Cognition Route",
+          "type": "select",
+          "description": "Choose Creative Pathfinding, EiDOS Reconstruction, or Kazz Override. Keep all three trace carrier blocks enabled.",
+          "default": "Creative Pathfinding",
+          "saved": "Creative Pathfinding",
+          "options": [
+            "Creative Pathfinding",
+            "EiDOS Reconstruction",
+            "Kazz Override"
+          ]
+        },
+        {
+          "name": "appeasement_interdict",
+          "label": "Agreement Bias Check",
+          "type": "switch",
+          "description": "Opt-in counterbias check for all three cognition routes. Challenges unearned agreement, surrender, forgiveness, and softening while preserving temperament and earned change. Recommended when a model shows positive/agreeability bias, including GLM and Claude models.",
+          "default": 0,
+          "saved": 0
+        },
+        {
+          "name": "cognition_effort",
+          "label": "Visible Trace Detail",
+          "type": "select",
+          "description": "Controls the preset-authored visible plan, not native/provider reasoning. Off omits it; Light uses a compact card. Full Creative/Kazz always use Cognition Trace Word Aim. Reconstruction retains its existing ceilings; Matrix uses an author summary.",
+          "default": "Standard",
+          "saved": "Standard",
+          "options": [
+            "Off",
+            "Light",
+            "Standard",
+            "Deep",
+            "Maximum"
+          ]
+        },
+        {
+          "name": "cognition_word_aim",
+          "label": "Trace Word Aim",
+          "type": "number",
+          "description": "Required numeric aim for full Creative/Kazz visible decision records. Default 1450 gives a 1400–1500 band; stage aims scale with it. Excludes story and Dock. Light, Off, Matrix, and Reconstruction keep their existing budgets; native reasoning is unchanged.",
+          "default": 1450,
+          "saved": 1450
+        }
+      ]
     }
   ]
 }
